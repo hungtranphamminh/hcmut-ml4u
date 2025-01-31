@@ -35,13 +35,13 @@ jobs:
           node-version: "20"
           cache: "npm"
 
+      # Changed from npm ci to npm install
       - name: Install deps
-        run: npm ci
+        run: npm install
 
       - name: Build
         run: npm run build
 
-      # Deploy
       - uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
