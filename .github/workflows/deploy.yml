@@ -9,11 +9,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
 
     steps:
       - uses: actions/checkout@v4
 
-      # Setup Python
       - uses: actions/setup-python@v5
         with:
           python-version: "3.10"
@@ -29,22 +31,24 @@ jobs:
         env:
           MANUBOT_USE_DOCKER: false
 
-      # Setup Node
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
 
-      # Changed from npm ci to npm install
       - name: Install deps
         run: npm install
 
       - name: Build
         run: npm run build
 
-      - uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to Vercel
+        run: |
+          npm i -g vercel
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+          vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
