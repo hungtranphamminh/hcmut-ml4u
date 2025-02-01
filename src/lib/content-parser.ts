@@ -2,7 +2,6 @@ import { z } from 'zod';
 import matter from 'gray-matter';
 import path from 'path';
 import { promises as fs } from 'fs';
-import { Paper, YearGroup } from '@/types/research/research-types';
 
 export class ContentParser<T> {
   private readonly schema: z.ZodType<T>;
@@ -42,45 +41,6 @@ export class ContentParser<T> {
   }
 }
 
-export const getResearchPapers = async (): Promise<YearGroup[]> => {
-  const PaperSchema = z.object({
-    title: z.string(),
-    authors: z.array(z.string()),
-    venue: z.string(),
-    date: z.string(),
-    doi: z.string(),
-    link: z.string().url(),
-    tags: z.array(z.string()).optional(),
-    image: z.string().url().nullable(),
-  });
-
-  const parser = new ContentParser<Paper>(
-    PaperSchema,
-    path.join(process.cwd(), 'content/researches')
-  );
-
-  const papers = await parser.parse();
-
-  const papersByYear = papers.reduce<Record<number, Paper[]>>((acc, paper) => {
-    const year = new Date(paper.date).getFullYear();
-    if (!acc[year]) {
-      acc[year] = [];
-    }
-    acc[year].push(paper);
-    return acc;
-  }, {});
-
-  Object.values(papersByYear).forEach(yearPapers => {
-    yearPapers.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  });
-
-  return Object.entries(papersByYear)
-    .map(([year, papers]): YearGroup => ({
-      year: parseInt(year),
-      papers,
-    }))
-    .sort((a, b) => b.year - a.year);
-};
 
 export const getTeamMembers = async () => {
   const MemberSchema = z.object({

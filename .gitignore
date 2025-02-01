@@ -41,3 +41,11 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# local python env
+venv
+
+# cache
+_cite
+scripts/citations/__pycache__
+scripts/citations/plugins/__pycache__
