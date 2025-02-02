@@ -48,7 +48,7 @@ export const getTeamMembers = async () => {
     image: z.string(),
     description: z.string().optional(),
     role: z.enum(['pi', 'undergrad', 'alumni']),
-    affiliation: z.string().optional(),
+    affiliation: z.string().optional().nullable(),
     links: z.record(z.string()).optional(),
     aliases: z.array(z.string()).optional(),
   });
@@ -59,4 +59,15 @@ export const getTeamMembers = async () => {
   );
 
   return parser.parse();
+};
+
+
+export const getTeamMembersByRole = async () => {
+  const members = await getTeamMembers();
+
+  const pi = members.filter(member => member.role === 'pi');
+  const teamMembers = members.filter(member => member.role === 'undergrad');
+  const alumni = members.filter(member => member.role === 'alumni');
+
+  return { pi, teamMembers, alumni };
 };
