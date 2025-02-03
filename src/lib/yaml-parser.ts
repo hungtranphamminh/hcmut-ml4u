@@ -26,6 +26,8 @@ export class YamlContentParser<T> {
   }
 }
 
+let researchCache: YearGroup[] | null = null;
+
 export const getYamlResearchPapers = async (): Promise<Paper[]> => {
   const PaperSchema = z.object({
     title: z.string(),
@@ -35,6 +37,7 @@ export const getYamlResearchPapers = async (): Promise<Paper[]> => {
     link: z.string().url(),
     tags: z.array(z.string()).optional(),
     image: z.string().url().nullable().optional(),
+    publisher: z.string().optional(),
   });
 
   // Parser now expects an array of papers.
@@ -47,6 +50,9 @@ export const getYamlResearchPapers = async (): Promise<Paper[]> => {
 };
 
 export const getYamlResearchPapersGroupedByYear = async (): Promise<YearGroup[]> => {
+  if (researchCache) {
+    return researchCache;
+  }
   const papers = await getYamlResearchPapers();
 
   // Group papers by year extracted from the `date` field.
@@ -61,10 +67,10 @@ export const getYamlResearchPapersGroupedByYear = async (): Promise<YearGroup[]>
   }, {});
 
   // Convert the grouped object into the YearGroup interface.
-  const yearGroups: YearGroup[] = Object.entries(groups).map(([year, papers]) => ({
+  researchCache = Object.entries(groups).map(([year, papers]) => ({
     year: parseInt(year, 10),
     papers,
   }));
-
-  return yearGroups;
+  
+  return researchCache;
 };
