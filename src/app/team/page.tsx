@@ -1,9 +1,8 @@
-// app/team/page.tsx
 import TeamPage from "@/components/team";
-import { getTeamMembersByRole } from "@/lib/content-parser";
+import { getTeamMembersByRole } from "@/lib/md-parser";
 
 export const metadata = {
-  title: "Team",
+  title: "ML4U | Our Team",
   description: "About our team",
 };
 
