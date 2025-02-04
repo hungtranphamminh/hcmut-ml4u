@@ -6,6 +6,7 @@ export interface Paper {
   link: string;
   tags?: string[];
   image?: string | null;
+  publisher?: string;
 }
 
 export interface YearGroup {
