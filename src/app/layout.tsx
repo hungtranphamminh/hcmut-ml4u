@@ -28,8 +28,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
+        <div className="fixed top-0 left-0 w-full h-screen bg-[url('/images/background.jpg')] bg-cover">
+          <div className="w-full h-full bg-black bg-opacity-50 backdrop-blur-lg"></div>
+        </div>
         <Sidebar />
-        {children}
+        <div className="absolute z-10 top-0 left-0 min-h-screen w-full">
+          {children}
+        </div>
       </body>
     </html>
   );
