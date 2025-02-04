@@ -1,5 +1,5 @@
 ---
-name: Lê Thành Nghĩa
+name: Phan Gia Bảo
 image: images/members/pgbao.jpg
 description: /Liberosis/ - but love Deep Learning a lot.
 role: undergrad
