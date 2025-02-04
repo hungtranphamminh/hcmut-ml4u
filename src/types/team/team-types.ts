@@ -6,6 +6,7 @@ export interface TeamMember {
   affiliation?: string | null;
   links?: Record<string, string>;
   aliases?: string[];
+  body?: string | null;
 }
 
 export interface TeamPageProps {
