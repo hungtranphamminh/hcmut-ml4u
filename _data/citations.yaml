@@ -15,6 +15,8 @@
   date: '2022-01-01'
   link: https://doi.org/g7wkt9
   image: https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-3-030-98015-3_10/MediaObjects/518004_1_En_10_Fig2_HTML.png?as=webp
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1007/978-3-030-97610-1_6
@@ -28,6 +30,8 @@
   date: '2022-01-01'
   link: https://doi.org/g7wkvf
   image: https://signofthefour.github.io/images/CalibStyelSpeech.png
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/NICS56915.2022.10013451
@@ -44,6 +48,8 @@
   date: '2022-10-31'
   link: https://doi.org/g7wkvp
   image: https://signofthefour.github.io/images/bahnar.png
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.7717/peerj-cs.686
@@ -58,6 +64,8 @@
   date: '2021-10-06'
   link: https://doi.org/g5325w
   image: https://dfzljdn9uc3pi.cloudfront.net/2021/cs-686/1/fig-2-2x.jpg
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.7717/peerj-cs.1144
@@ -72,6 +80,8 @@
   date: '2022-11-03'
   link: https://doi.org/g7wmkr
   image: https://dfzljdn9uc3pi.cloudfront.net/2022/cs-1144/1/fig-3-2x.jpg
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.3390/electronics12112544
@@ -86,6 +96,8 @@
   date: '2023-06-05'
   link: https://doi.org/g7wmjv
   image: https://www.mdpi.com/electronics/electronics-12-02544/article_deploy/html/images/electronics-12-02544-g001.png
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1007/978-3-031-36886-8_18
@@ -98,6 +110,8 @@
   publisher: Lecture Notes in Networks and Systems
   date: '2023-01-01'
   link: https://doi.org/g7wmkg
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1007/978-3-031-36886-8_19
@@ -114,6 +128,8 @@
   publisher: Lecture Notes in Networks and Systems
   date: '2023-01-01'
   link: https://doi.org/g7wmkc
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1007/978-3-031-46573-4_17
@@ -130,6 +146,8 @@
   publisher: Lecture Notes on Data Engineering and Communications Technologies
   date: '2023-01-01'
   link: https://doi.org/g7wmj8
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1016/j.imavis.2023.104871
@@ -145,6 +163,8 @@
   publisher: Image and Vision Computing
   date: '2024-01-01'
   link: https://doi.org/g8mj4v
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1007/978-3-031-36886-8_20
@@ -155,6 +175,8 @@
   publisher: Lecture Notes in Networks and Systems
   date: '2023-01-01'
   link: https://doi.org/g8mj4w
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1007/978-3-031-46573-4_39
@@ -170,6 +192,8 @@
   publisher: Lecture Notes on Data Engineering and Communications Technologies
   date: '2023-01-01'
   link: https://doi.org/g8mj4x
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1007/978-3-031-36886-8_17
@@ -180,6 +204,8 @@
   publisher: Lecture Notes in Networks and Systems
   date: '2023-01-01'
   link: https://doi.org/g8mj4z
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/ACCESS.2023.3260159
@@ -194,6 +220,8 @@
   date: '2023-01-01'
   link: https://doi.org/g8mj42
   image: https://ieeexplore.ieee.org/ielx7/6287639/10005208/10077589/graphical_abstract/access-gagraphic-3260159.jpg
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1007/978-3-030-88113-9_25
@@ -206,6 +234,8 @@
   publisher: Communications in Computer and Information Science
   date: '2021-01-01'
   link: https://doi.org/g8mj44
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1049/iet-ipr.2013.0719
@@ -216,6 +246,8 @@
   publisher: IET Image Processing
   date: '2015-06-01'
   link: https://doi.org/f7c8ch
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/TCSVT.2014.2334053
@@ -228,6 +260,8 @@
   publisher: IEEE Transactions on Circuits and Systems for Video Technology
   date: '2014-12-01'
   link: https://doi.org/g8mj45
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.5573/JSTS.2014.14.2.212
@@ -239,6 +273,8 @@
   publisher: JSTS:Journal of Semiconductor Technology and Science
   date: '2014-04-30'
   link: https://doi.org/g8mj46
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/TVT.2013.2242910
@@ -252,6 +288,8 @@
   publisher: IEEE Transactions on Vehicular Technology
   date: '2013-07-01'
   link: https://doi.org/f44z4g
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1049/iet-ipr.2012.0563
@@ -264,6 +302,8 @@
   date: '2013-03-01'
   link: https://doi.org/f44pqm
   image: https://ietresearch.onlinelibrary.wiley.com/cms/asset/2f9c66ba-7293-4e91-bdd2-29dc3584e877/ipr2bf02427-fig-0006-m.jpg
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/TCSVT.2013.2254898
@@ -278,6 +318,8 @@
   publisher: IEEE Transactions on Circuits and Systems for Video Technology
   date: '2014-02-01'
   link: https://doi.org/g8mj48
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/ISITIA63062.2024.10667820
@@ -291,6 +333,8 @@
     (ISITIA)
   date: '2024-07-10'
   link: https://doi.org/g8mj5b
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/RIVF60135.2023.10471862
@@ -304,6 +348,8 @@
     (RIVF)
   date: '2023-12-23'
   link: https://doi.org/g8mj5d
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/RIVF60135.2023.10471769
@@ -319,6 +365,8 @@
     (RIVF)
   date: '2023-12-23'
   link: https://doi.org/g8mj5f
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/NICS56915.2022.10013370
@@ -337,6 +385,8 @@
   publisher: 2022 9th NAFOSTED Conference on Information and Computer Science (NICS)
   date: '2022-10-31'
   link: https://doi.org/g8mj5g
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/CACML55074.2022.00040
@@ -347,6 +397,8 @@
   publisher: 2022 Asia Conference on Algorithms, Computing and Machine Learning (CACML)
   date: '2022-03-01'
   link: https://doi.org/g8mj5h
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.5220/0010657700003061
@@ -358,6 +410,8 @@
     Vision and Intelligent Systems
   date: '2021-01-01'
   link: https://doi.org/g8mj5j
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/NICS51282.2020.9335862
@@ -368,6 +422,8 @@
   publisher: 2020 7th NAFOSTED Conference on Information and Computer Science (NICS)
   date: '2020-11-26'
   link: https://doi.org/g8mj5k
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1007/978-3-030-19063-7_31
@@ -379,6 +435,8 @@
   publisher: Advances in Intelligent Systems and Computing
   date: '2019-01-01'
   link: https://doi.org/g8mj5m
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1007/978-3-030-19063-7_32
@@ -390,6 +448,8 @@
   publisher: Advances in Intelligent Systems and Computing
   date: '2019-01-01'
   link: https://doi.org/g8mj5n
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1007/978-3-030-33709-4_7
@@ -402,6 +462,8 @@
   publisher: Lecture Notes in Computer Science
   date: '2019-01-01'
   link: https://doi.org/g8mj5p
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/ISCIT.2019.8905142
@@ -415,6 +477,8 @@
     (ISCIT)
   date: '2019-09-01'
   link: https://doi.org/g8mj5q
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/NICS.2018.8606828
@@ -432,6 +496,8 @@
   publisher: 2018 5th NAFOSTED Conference on Information and Computer Science (NICS)
   date: '2018-11-01'
   link: https://doi.org/g8mj5r
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/FCV.2015.7103725
@@ -444,6 +510,8 @@
     (FCV)
   date: '2015-01-01'
   link: https://doi.org/g8g8x9
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/ICIP.2012.6467523
@@ -456,6 +524,8 @@
   publisher: 2012 19th IEEE International Conference on Image Processing
   date: '2012-09-01'
   link: https://doi.org/g8mj5s
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/VETECS.2012.6239921
@@ -469,6 +539,8 @@
   publisher: 2012 IEEE 75th Vehicular Technology Conference (VTC Spring)
   date: '2012-05-01'
   link: https://doi.org/g8mj5t
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/ICRA.2011.5979710
@@ -479,6 +551,8 @@
   publisher: 2011 IEEE International Conference on Robotics and Automation
   date: '2011-05-01'
   link: https://doi.org/cnh38n
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1007/978-3-642-25367-6_7
@@ -489,6 +563,8 @@
   publisher: Lecture Notes in Computer Science
   date: '2011-01-01'
   link: https://doi.org/dtdgw9
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/FCCM.2010.14
@@ -503,6 +579,8 @@
     Computing Machines
   date: '2010-01-01'
   link: https://doi.org/d884pc
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/IROS.2009.5354258
@@ -514,6 +592,8 @@
   publisher: 2009 IEEE/RSJ International Conference on Intelligent Robots and Systems
   date: '2009-10-01'
   link: https://doi.org/fh6wnz
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/ROBIO.2009.4913170
@@ -526,6 +606,8 @@
   publisher: 2008 IEEE International Conference on Robotics and Biomimetics
   date: '2009-02-01'
   link: https://doi.org/csxvwv
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/ROBIO.2009.4913024
@@ -539,6 +621,8 @@
   publisher: 2008 IEEE International Conference on Robotics and Biomimetics
   date: '2009-02-01'
   link: https://doi.org/fkk3dk
+  tags:
+  - paper
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1109/RIVF60135.2023.10471783
