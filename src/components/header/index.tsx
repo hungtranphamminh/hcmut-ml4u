@@ -1,13 +1,14 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import logoIcon from "@images/logo.svg";
+import Image from "next/image";
 
-const PAGES = [
+export const PAGE_PATHS = [
   { name: "Home", path: "/" },
-  { name: "Researches", path: "/researches" },
+  { name: "Publications", path: "/researches" },
   { name: "Projects", path: "/projects" },
   { name: "Team", path: "/team" },
-  { name: "Blogs", path: "/blogs" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -17,20 +18,58 @@ export default function Sidebar() {
   console.log("pathName", pathName);
 
   return (
-    <div className="w-full flex items-center justify-center fixed top-0 left-0 z-[9999] py-4">
+    <div
+      className="w-full flex items-center justify-between fixed top-0 left-0 z-[999]
+    xl:px-10 shadow-md
+    h-[60px] backdrop-blur-[6px]"
+    >
+      {/* Logo */}
+      <div className="flex gap-2 items-center">
+        <Image src={logoIcon} alt="logo" width={30} height={30} />
+        <div>
+          <p className="leading-none font-semibold text-white text-xs font-geist">
+            HCMUT - 2025
+          </p>
+          <div className="font-geist text-white text-xl font-semibold tracking-tighter">
+            AI Tech Lab
+          </div>
+        </div>
+      </div>
+
       <div className=" flex items-center justify-center">
-        {PAGES.map((page) => (
+        {PAGE_PATHS.map((page, index) => (
           <Link key={page.path} href={page.path}>
-            <p
-              className={`text-xl font-semibold hover:text-blue-500 mx-4
-                ${pathName === page.path ? "text-blue-500" : "text-gray-800"}
-              `}
-            >
-              {page.name}
-            </p>
+            <div className="w-fit px-4 group flex flex-col items-center justify-center cursor-pointer">
+              <div
+                className={`text-base font-semibold text-white font-geist flex items-center gap-2
+                `}
+              >
+                <span className="text-xs text-slate-500">{`<0${index}/>`}</span>
+                <div className="relative w-fit">
+                  {page.name}
+                  <div className="w-full relative mt-1">
+                    <div
+                      className={`absolute h-[2px] left-1/2 bg-white
+                  ${pathName === page.path ? "w-1/2" : "w-0 group-hover:w-1/2"}
+                  transition-all duration-200 ease-in-out
+                  `}
+                    ></div>
+
+                    <div
+                      className={`absolute h-[2px] right-1/2 bg-white
+                  ${pathName === page.path ? "w-1/2" : "w-0 group-hover:w-1/2"}
+                  transition-all duration-300 ease-in-out
+                  `}
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </Link>
         ))}
       </div>
+
+      <div className="xl:w-[100px]"></div>
     </div>
   );
 }
