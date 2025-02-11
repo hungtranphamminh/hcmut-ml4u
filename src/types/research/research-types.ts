@@ -1,12 +1,12 @@
 export interface Paper {
   title: string;
   authors: string[];
-  venue: string;
   date: string;
-  doi: string;
+  id: string;
   link: string;
   tags?: string[];
-  image: string | null;
+  image?: string | null;
+  publisher?: string;
 }
 
 export interface YearGroup {
