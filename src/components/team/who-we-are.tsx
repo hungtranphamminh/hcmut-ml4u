@@ -1,6 +1,6 @@
 export default function WhoWeAre() {
   return (
-    <div className="snap-start w-full flex flex-col items-center justify-center ">
+    <div className="snap-start w-full flex flex-col items-center justify-center  font-geist">
       <div className=" 2xl:max-w-[1440px] px-20  py-10">
         <div className="py-20"></div>
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 text-white uppercase">

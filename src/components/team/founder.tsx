@@ -1,15 +1,13 @@
 import { TeamMember } from "@/types/team/team-types";
 
 export default function Founder({ pi }: { readonly pi: TeamMember[] }) {
-  console.log("founder info: ", pi);
-
   const currentFounder = pi[0];
 
   return (
     <section className="w-full flex flex-col items-center justify-center bg-white">
       {/* title */}
       <div
-        className="xl:text-4xl md:text-3xl text-xl font-light uppercase mt-10
+        className="xl:text-4xl md:text-3xl text-xl font-light uppercase mt-10 font-geist
       "
       >
         Principle Investigator
