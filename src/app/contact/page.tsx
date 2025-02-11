@@ -1,8 +1,5 @@
+import Contact from "@/components/contact";
+
 export default function ContactPage() {
-  return (
-    <div>
-      <h1>Contact</h1>
-      <p>Our contact is the best contact.</p>
-    </div>
-  );
+  return <Contact />;
 }
