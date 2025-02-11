@@ -20,7 +20,7 @@ export default function Sidebar() {
   return (
     <div
       className="w-full flex items-center justify-between fixed top-0 left-0 z-[999]
-    xl:px-10 shadow-md
+    xl:px-10 md:px-6 px-4 shadow-md
     h-[60px] backdrop-blur-[6px]"
     >
       {/* Logo */}
@@ -36,7 +36,7 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <div className=" flex items-center justify-center">
+      <div className=" items-center justify-center hidden xl:flex ">
         {PAGE_PATHS.map((page, index) => (
           <Link key={page.path} href={page.path}>
             <div className="w-fit px-4 group flex flex-col items-center justify-center cursor-pointer">

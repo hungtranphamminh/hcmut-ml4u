@@ -1,6 +1,6 @@
 export default function HamburgerIcon() {
   return (
-    <div className=" h-[32px] w-[44.8px] bg-transparent">
+    <div className=" lg:h-[32px] lg:w-[44.8px] h-[20px] w-[25px] bg-transparent">
       <div className="group w-full h-full flex flex-col relative items-center justify-center">
         <div className="w-full absolute top-0 left-0 h-full items-center justify-center">
           <div className="relative w-full h-full">

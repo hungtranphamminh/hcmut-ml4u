@@ -15,16 +15,20 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="xl:w-[100px] h-screen fixed bg-black bg-opacity-15 top-0 right-0 z-[9999] shadow-md">
+    <div className="xl:w-[100px] h-screen fixed  top-0 right-0 z-[9999] md:shadow-md">
       {/* Intersection with the header */}
-      <div className="w-full h-[60px] flex items-center justify-center">
+      <div className="w-full px-4 h-[60px] flex items-center justify-center md:bg-black md:bg-opacity-15">
         <button>
           <HamburgerIcon />
         </button>
       </div>
 
       {/* Navigator */}
-      <div className="w-full h-[calc(100%-60px)] flex flex-col items-center justify-center backdrop-blur-[3px]">
+      <div
+        className="w-full h-[calc(100%-60px)] flex-col items-center justify-center backdrop-blur-[3px] bg-black bg-opacity-15
+        hidden md:flex
+      "
+      >
         <div className="flex flex-col items-center gap-6">
           {PAGE_PATHS.map((page, index) => {
             const isActive = pathname === page.path;
