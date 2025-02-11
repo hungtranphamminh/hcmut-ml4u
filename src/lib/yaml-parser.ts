@@ -71,6 +71,6 @@ export const getYamlResearchPapersGroupedByYear = async (): Promise<YearGroup[]>
     year: parseInt(year, 10),
     papers,
   }));
-  
+
   return researchCache;
 };
