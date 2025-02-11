@@ -22,8 +22,9 @@ export default function PublicationCard({
   searchTerm,
 }: PublicationCardProps) {
   return (
-    <div className="w-full max-w-[800px] bg-white rounded-xl group shadow-lg hover:scale-105 transition-all duration-200 ease-in-out">
+    <div className="w-full max-w-4xl bg-white rounded-xl group shadow-lg hover:scale-105 transition-all duration-200 ease-in-out">
       <div className="flex gap-4 p-4">
+        {/* publication thumbnail image */}
         {publication.image ? (
           <div className="w-64 h-40 relative rounded-lg overflow-hidden shrink-0">
             <Image
@@ -40,15 +41,23 @@ export default function PublicationCard({
           </div>
         )}
 
+        {/* publication details */}
         <div className="flex flex-col flex-1 min-w-0 py-2">
-          <h3 className="text-xl font-medium mt-1 mb-2 line-clamp-2 group-hover:text-blue-600">
+          {/* publisher */}
+          <p className="text-xs text-gray-600 inline-flex">
+            {highlightText(publication.publisher ?? "", searchTerm)}
+          </p>
+
+          {/* title */}
+          <h3 className="text-lg font-bold mt-1 mb-2 line-clamp-2 group-hover:text-blue-600">
             <Link href={publication.link} target="_blank">
               {highlightText(publication.title, searchTerm)}
             </Link>
           </h3>
 
-          <p className="text-gray-600 text-sm mb-4 line-clamp-1">
-            {publication.authors.join(", ")}
+          {/* authors */}
+          <p className="text-gray-600 text-sm mb-4">
+            {highlightText(publication.authors.join(", "), searchTerm)}
           </p>
 
           <div className="mt-auto flex flex-wrap gap-2">

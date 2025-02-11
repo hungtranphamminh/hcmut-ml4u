@@ -1,4 +1,4 @@
-import ResearchList from "@/components/researches";
+import SuspenseSearchParamsWrapper from "@/components/researches/search-params-wrapper";
 import { getYamlResearchPapersGroupedByYear } from "@/lib/yaml-parser";
 
 export const metadata = {
@@ -9,5 +9,5 @@ export const metadata = {
 export default async function ResearchPage() {
   const publications = await getYamlResearchPapersGroupedByYear();
 
-  return <ResearchList publications={publications} />;
+  return <SuspenseSearchParamsWrapper publications={publications} />;
 }

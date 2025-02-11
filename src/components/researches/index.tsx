@@ -16,9 +16,15 @@ export default function ResearchList({ publications }: Props) {
     return publications
       .map((yearGroup) => ({
         ...yearGroup,
-        papers: yearGroup.papers.filter((paper) =>
-          // Adjust the fields to search in as necessary (e.g., title, abstract)
-          paper.title.toLowerCase().includes(searchText.toLowerCase())
+        papers: yearGroup.papers.filter(
+          (paper) =>
+            // Adjust the fields to search in as necessary (e.g., title, abstract)
+            paper.title.toLowerCase().includes(searchText.toLowerCase()) ||
+            paper.authors
+              .join(" ")
+              .toLowerCase()
+              .includes(searchText.toLowerCase()) ||
+            paper.publisher?.toLowerCase().includes(searchText.toLowerCase())
         ),
       }))
       .filter((yearGroup) => yearGroup.papers.length > 0);
@@ -26,7 +32,7 @@ export default function ResearchList({ publications }: Props) {
 
   return (
     <div className="w-full min-h-screen bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 py-12 bg-blue-400">
+      <div className="w-fit mx-auto px-4 py-12 bg-blue-400">
         {/* Search bar */}
         <div className="mb-8">
           <input
@@ -37,6 +43,7 @@ export default function ResearchList({ publications }: Props) {
             className="w-full p-2 border border-gray-300 rounded"
           />
         </div>
+
         <div className="space-y-16 flex flex-col-reverse ">
           {filteredPublications.map((yearGroup) => (
             <section
