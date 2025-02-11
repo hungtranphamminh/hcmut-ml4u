@@ -23,3 +23,24 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.bubble {
+  animation: float 2s ease-out both infinite var(--delay);
+}
+
+@keyframes float {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
