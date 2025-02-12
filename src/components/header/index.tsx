@@ -20,7 +20,7 @@ export default function Sidebar() {
   return (
     <div
       className="w-full flex items-center justify-between fixed top-0 left-0 z-[999]
-    xl:px-10 md:px-6 px-4 shadow-md 
+    xl:px-10 md:px-6 px-4 shadow-md bg-black bg-opacity-20
     h-[60px] backdrop-blur-[6px]"
     >
       {/* Logo */}
