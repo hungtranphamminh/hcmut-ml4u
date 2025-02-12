@@ -1,69 +1,125 @@
 "use client";
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useRef } from "react";
 import { YearGroup } from "@/types/research/research-types";
 import PublicationCard from "./publication-card";
+import { matchesQuery, splitQuery } from "@/lib/research-search";
+import { useDebounce } from "@/hooks/use-debounce";
+import { useRouter, useSearchParams } from "next/navigation";
 
 interface Props {
   readonly publications: YearGroup[];
 }
 
 export default function ResearchList({ publications }: Props) {
-  const [searchText, setSearchText] = useState("");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const currentSearch = searchParams.get("search") || "";
+  const inputRef = useRef<HTMLInputElement>(null);
+  const currentInputValue = useRef(currentSearch);
+  const debouncedUrlUpdate = useDebounce(currentInputValue.current, 300);
 
-  // Filter publications based on search text.
   const filteredPublications = useMemo(() => {
-    if (!searchText) return publications;
+    if (!currentSearch) return publications;
+    const { phrases, terms } = splitQuery(currentSearch);
+
     return publications
       .map((yearGroup) => ({
         ...yearGroup,
-        papers: yearGroup.papers.filter(
-          (paper) =>
-            // Adjust the fields to search in as necessary (e.g., title, abstract)
-            paper.title.toLowerCase().includes(searchText.toLowerCase()) ||
-            paper.authors
-              .join(" ")
-              .toLowerCase()
-              .includes(searchText.toLowerCase()) ||
-            paper.publisher?.toLowerCase().includes(searchText.toLowerCase())
-        ),
+        papers: yearGroup.papers.filter((paper) => {
+          const searchableText = [
+            paper.title,
+            paper.authors.join(" "),
+            paper.publisher,
+          ].join(" ");
+
+          return matchesQuery(searchableText, phrases, terms);
+        }),
       }))
       .filter((yearGroup) => yearGroup.papers.length > 0);
-  }, [publications, searchText]);
+  }, [publications, currentSearch]);
+
+  // Get all matched terms for highlighting
+  const highlightTerms = useMemo(() => {
+    if (!currentSearch) return [];
+    const { phrases, terms } = splitQuery(currentSearch);
+    return [...phrases, ...terms];
+  }, [currentSearch]);
+
+  // Handle input changes
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    currentInputValue.current = e.target.value;
+    router.refresh();
+  };
+
+  // Update URL when debounced value changes
+  React.useEffect(() => {
+    const params = new URLSearchParams(searchParams);
+    if (debouncedUrlUpdate) {
+      params.set("search", debouncedUrlUpdate);
+    } else {
+      params.delete("search");
+    }
+
+    if (params.toString() !== searchParams.toString()) {
+      router.replace(`/researches?${params.toString()}`, { scroll: false });
+    }
+  }, [debouncedUrlUpdate, router, searchParams]);
 
   return (
-    <div className="w-full min-h-screen bg-gray-50">
-      <div className="w-fit mx-auto px-4 py-12 bg-blue-400">
-        {/* Search bar */}
-        <div className="mb-8">
-          <input
-            type="text"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-            placeholder="Search publications..."
-            className="w-full p-2 border border-gray-300 rounded"
-          />
+    <div className="min-h-screen flex flex-col w-full pt-[60px] ">
+      <div className="w-full max-w-7xl mx-auto px-4 flex-1 relative xl:w-[calc(100%-80px)]">
+        {/* Section title & description */}
+        <div className="w-full flex flex-col items-center justify-center">
+          <div className="font-geist pl-3 lg:text-9xl text-7xl bg-white bg-clip-text text-transparent bg-opacity-50 font-extralight pt-4">
+            02
+          </div>
+          <div className=" min-w-[200px] w-fit py-2 px-3 ">
+            <div className="font-medium lg:text-4xl text-3xl text-white text-nowrap tracking-widest relative uppercase font-geist">
+              Publications
+              <div className="absolute -top-[2px] -left-2 w-[20px] h-3/4 border-t-[2px] border-l-[2px] border-white"></div>
+              <div className="absolute -bottom-[2px] -right-2 w-[20px] h-3/4 border-b-[2px] border-r-[2px] border-white"></div>
+            </div>
+          </div>
+
+          <div className="font-geist text-center text-white text-base mt-4 max-w-3xl">
+            Below are publications by our members, including some completed
+            during their time at other industry partners (e.g., VinAI).
+          </div>
         </div>
 
-        <div className="space-y-16 flex flex-col-reverse ">
-          {filteredPublications.map((yearGroup) => (
-            <section
-              key={yearGroup.year}
-              className="scroll-mt-20"
-              id={yearGroup.year.toString()}
-            >
-              <h2 className="text-3xl font-bold mb-8 sticky z-10 top-20 bg-gray-50/80 backdrop-blur-sm py-4">
+        {/* Search Input */}
+        <div className="sticky top-[60px] z-50 py-4">
+          <div className="relative max-w-xl mx-auto">
+            <input
+              ref={inputRef}
+              type="text"
+              defaultValue={currentSearch}
+              onChange={handleSearchChange}
+              placeholder='Search publications... Use "word1" "word2" for OR search'
+              className="w-full px-4 py-2 bg-black/60 backdrop-blur-md 
+                       border border-white/20 rounded-lg
+                       text-white placeholder-white/50"
+            />
+          </div>
+        </div>
+
+        {/* Publications List */}
+        <div className="space-y-12 mt-8 relative pb-20">
+          {[...filteredPublications].toReversed().map((yearGroup) => (
+            <div key={yearGroup.year} className="space-y-6">
+              <h2 className="text-2xl font-bold text-white border-b py-2 px-4 z-40 font-geist">
                 {yearGroup.year}
               </h2>
-              <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                 {yearGroup.papers.map((paper) => (
                   <PublicationCard
                     key={paper.id}
                     publication={paper}
-                    searchTerm={searchText}
+                    searchTerms={highlightTerms}
                   />
                 ))}
               </div>
-            </section>
+            </div>
           ))}
         </div>
       </div>

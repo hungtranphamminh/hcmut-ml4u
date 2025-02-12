@@ -1,6 +1,6 @@
 "use client";
 import { Suspense } from "react";
-import ResearchList from "./index-v2";
+import ResearchList from ".";
 import { YearGroup } from "@/types/research/research-types";
 
 interface Props {
