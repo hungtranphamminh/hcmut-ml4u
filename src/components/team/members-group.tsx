@@ -7,18 +7,18 @@ export default function MembersGroup({
   readonly members: TeamMember[];
 }) {
   return (
-    <div className="w-full snap-center flex items-center justify-center bg-white pt-[120px]">
+    <div className="w-full flex items-center justify-center bg-white xl:pt-[120px] lg:pt-[60px] md:pt-[32px]">
       <section className="2xl:max-w-[1440px] flex flex-col items-start justify-center 2xl:px-20 px-6 w-full">
         <div
           className=" w-full flex flex-wrap justify-center items-center 
         md:gap-8 xl:gap-10 gap-6"
         >
           <div className="max-w-[300px] font-geist">
-            <h2 className="text-xl md:text-4xl font-bold text-right my-8 uppercase bg-[url('/images/background.jpg')] bg-[center_bottom] bg-clip-text text-transparent">
+            <h2 className="text-xl md:text-4xl font-bold text-right md:my-8 my-4 uppercase bg-[url('/images/background.jpg')] bg-[center_bottom] bg-clip-text text-transparent">
               Undergrad <br />{" "}
               <span className="text-black font-light">Team Members</span>
             </h2>
-            <p className="text-black font-light text-right">
+            <p className="text-black font-light text-right text-sm md:text-base">
               The following are the undergraduate students of HCMUT who are part
               of the research team.
             </p>

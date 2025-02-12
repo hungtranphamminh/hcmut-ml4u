@@ -72,7 +72,7 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
         )}
 
         <div className="w-full bg-white shadow-xl">
-          <h3 className="text-lg font-semibold text-gray-600 pl-3">
+          <h3 className="md:text-lg text-base leading-tight font-semibold text-gray-600 pl-3">
             {member.name}
           </h3>
           <div className="h-0 group-hover:h-[180px] transition-all duration-300 ease-in-out overflow-hidden">

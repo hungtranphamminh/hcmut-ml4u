@@ -11,8 +11,8 @@ const TeamPage = ({ pi, teamMembers, alumni }: TeamPageProps) => {
   return (
     <div
       className="scroll-smooth 
-    w-full xl:w-[calc(100%-100px)]
-    relative pb-20 flex flex-col items-center justify-start"
+    w-full xl:w-[calc(100%-80px)]
+    relative flex flex-col items-center justify-start"
     >
       {/* header */}
       <div className="fixed w-full h-[60px] top-0 left-0">
@@ -28,8 +28,6 @@ const TeamPage = ({ pi, teamMembers, alumni }: TeamPageProps) => {
 
       {/* Team Members Section */}
       <MembersGroup members={teamMembers} />
-
-      <div className="w-full py-[60px] bg-white"></div>
 
       {/* Alumni Section */}
       <AlumnisGroup members={alumni} />
