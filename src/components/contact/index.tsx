@@ -41,7 +41,7 @@ const ContactPage = () => {
             {/* [Mobile] - Title */}
             <div className="relative z-10 @3xl:hidden flex flex-col items-center w-full">
               <div className="font-geist pl-3 text-8xl bg-white bg-clip-text text-transparent bg-opacity-50 font-extralight pt-4">
-                04
+                05
               </div>
               <div className=" min-w-[200px] w-fit py-2 px-3 ">
                 <div className="font-medium text-3xl text-white text-nowrap tracking-widest relative uppercase font-geist">
@@ -122,7 +122,7 @@ const ContactPage = () => {
               <div className="flex relative w-full justify-end">
                 <div className="flex flex-col items-end w-full">
                   <div className="font-geist  text-7xl md:text-9xl  bg-white bg-clip-text text-transparent bg-opacity-50 font-extralight pt-4">
-                    04
+                    05
                   </div>
                   <div className=" min-w-[200px] w-fit py-4 pl-6 pr-6 ">
                     <div className="font-medium lg:text-5xl text-4xl text-white text-nowrap tracking-widest relative uppercase font-geist">
@@ -192,7 +192,7 @@ const ContactPage = () => {
               <div className="flex relative w-full justify-end">
                 <div className="flex flex-col items-end w-full">
                   <div className=" font-geist  text-5xl md:text-9xl  bg-white bg-clip-text text-transparent bg-opacity-50 font-extralight py-4">
-                    04
+                    05
                   </div>
                   <div className=" min-w-[200px] w-fit pl-6 pr-6 ">
                     <div className="font-medium lg:text-5xl text-4xl text-white text-nowrap tracking-widest relative uppercase font-geist">
