@@ -44,7 +44,9 @@ export default function Sidebar() {
                 className={`text-base font-semibold text-white font-geist flex items-center gap-2
                 `}
               >
-                <span className="text-xs text-slate-500 hidden xl:inline-block">{`<0${index}/>`}</span>
+                <span className="text-xs text-slate-500 hidden xl:inline-block">{`<0${
+                  index + 1
+                }/>`}</span>
                 <div className="relative w-fit">
                   {page.name}
                   <div className="w-full relative mt-1">

@@ -44,7 +44,7 @@ export default function Sidebar() {
                         : "text-gray-500 hover:text-gray-300"
                     }`}
                 >
-                  {"0" + index}
+                  {"0" + (index + 1)}
 
                   {/* Connector line - only show if current section and not last item */}
 
