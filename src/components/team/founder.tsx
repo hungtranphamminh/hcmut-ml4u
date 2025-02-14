@@ -4,17 +4,22 @@ export default function Founder({ pi }: { readonly pi: TeamMember[] }) {
   const currentFounder = pi[0];
 
   return (
-    <section className="w-full flex flex-col items-center justify-center bg-white">
-      {/* title */}
+    <section className="w-full flex flex-col items-center justify-center">
+      {/* Title */}
       <div
-        className="xl:text-4xl md:text-3xl text-xl font-light uppercase mt-10 font-geist
+        className="xl:text-4xl md:text-3xl text-xl font-light uppercase mt-10 font-geist text-white py-1 border-t border-b
       "
       >
         Principle Investigator
       </div>
 
-      <div className=" flex items-center gap-10 justify-center 2xl:max-w-[1440px] px-20  py-10">
-        {/* avatar */}
+      <div
+        className=" flex flex-col sm:flex-row items-center xl:gap-10 gap-4 justify-center 2xl:max-w-5xl 
+        xl:max-w-4xl max-w-3xl
+      2xl:px-20 px-4  py-10
+      "
+      >
+        {/* Avatar */}
         <div className="shrink-0 flex flex-col items-center">
           <div className="relative w-full  flex items-center justify-center">
             <img
@@ -24,22 +29,23 @@ export default function Founder({ pi }: { readonly pi: TeamMember[] }) {
             />
           </div>
         </div>
-        {/* founder details */}
-        <div className=" ml-4 ">
+
+        {/* Founder details */}
+        <div className=" ml-4 backdrop-blur-md shadow-sm p-4">
           <div className="pb-6 mb-6 w-fit border-b border-gray-400">
-            {/* name */}
-            <h3 className="text-4xl font-medium text-blue-900 text-left transition-colors pb-2">
+            {/* Name */}
+            <h3 className="text-3xl md:text-4xl font-medium text-white text-left transition-colors pb-2">
               {currentFounder.name}
             </h3>
 
-            {/* title */}
-            <p className="text-lg  text-gray-500 ">
+            {/* Title */}
+            <p className="md:text-lg text-base  text-white/80 ">
               <span className=" mr-2 uppercase">Faculty/</span>Principal
               Investigator
             </p>
-            {/* affiliation */}
+            {/* Affiliations */}
             {currentFounder.affiliation && (
-              <p className="text-base text-gray-500 text-left mt-1">
+              <p className="text-base text-white/80 text-left mt-1">
                 {currentFounder.affiliation}
               </p>
             )}
@@ -61,13 +67,14 @@ export default function Founder({ pi }: { readonly pi: TeamMember[] }) {
               ))}
             </div>
           )} */}
+
           {currentFounder.body && (
-            <div className="font-extralight">
-              <span className="text-blue-900 mr-1 font-medium">
+            <div className="font-extralight text-sm text-white/90">
+              <span className="text-white underline mr-1 font-semibold ">
                 Dr. Nguyen Duc Dung
               </span>
               leads a Machine Learning group at
-              <span className="text-blue-700 font-normal mx-1">
+              <span className="text-white font-semibold underline font-normal mx-1">
                 Ho Chi Minh City University of Technology (HCMUT)
               </span>
               , focusing on cutting-edge research in artificial intelligence and

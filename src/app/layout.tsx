@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import FullPagePopupWrapper from "@/components/popup/full-page";
+import FullPagePopupWrapper from "@/components/page-wrapper.tsx/full-page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

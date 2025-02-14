@@ -1,5 +1,5 @@
 import TeamPage from "@/components/team";
-import { getTeamMembersByRole } from "@/lib/md-parser";
+import { getTeamMembersByRole } from "@/lib/get-team-members";
 
 export const metadata = {
   title: "ML4U | Our Team",

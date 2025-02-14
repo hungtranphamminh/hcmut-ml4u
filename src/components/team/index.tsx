@@ -11,15 +11,16 @@ const TeamPage = ({ pi, teamMembers, alumni }: TeamPageProps) => {
   return (
     <div
       className="scroll-smooth 
-    w-full xl:w-[calc(100%-100px)]
-    relative pb-20 flex flex-col items-center justify-start"
+    w-full xl:w-[calc(100%-80px)] xl:pl-20
+    relative flex flex-col items-center justify-start"
     >
-      {/* header */}
+      {/* Header underlay for readability enhancement */}
       <div className="fixed w-full h-[60px] top-0 left-0">
         <div className="w-full h-full bg-[#102542] bg-opacity-65">
           <div className="w-full h-full bg-gradient-to-b from-[#0A192F] from-[0.5%] via-transparent to-transparent bg-opacity-15"></div>
         </div>{" "}
       </div>
+
       {/* Introduction Section */}
       <WhoWeAre />
 
@@ -28,8 +29,6 @@ const TeamPage = ({ pi, teamMembers, alumni }: TeamPageProps) => {
 
       {/* Team Members Section */}
       <MembersGroup members={teamMembers} />
-
-      <div className="w-full py-[60px] bg-white"></div>
 
       {/* Alumni Section */}
       <AlumnisGroup members={alumni} />
