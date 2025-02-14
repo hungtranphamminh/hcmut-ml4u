@@ -1,8 +1,8 @@
-export default function ProjectsPage() {
-  return (
-    <div>
-      <h1>Projects</h1>
-      <p>Our projects are the best projects.</p>
-    </div>
-  );
+import SuspenseSearchParamsWrapperProjects from "@/components/projects/search-params-wrapper";
+import { getProjects } from "@/lib/get-projects";
+
+export default async function Projects() {
+  const allProjects = await getProjects();
+
+  return <SuspenseSearchParamsWrapperProjects projects={allProjects} />;
 }
