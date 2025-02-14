@@ -32,24 +32,6 @@ export default function PublicationCard({
   return (
     <div className="w-full bg-white group shadow-lg hover:scale-105 transition-all duration-200 ease-in-out">
       <div className="flex flex-col gap-4 p-4 w-full">
-        {/* Image */}
-        {/* {publication.image ? (
-          <div className="w-full 2xl:h-40 relative rounded-lg overflow-hidden shrink-0">
-            <Image
-              src={publication.image}
-              alt={publication.title}
-              fill
-              style={{
-                objectFit: "contain",
-              }}
-            />
-          </div>
-        ) : (
-          <div className="w-64 h-60 bg-gray-50 rounded-lg shrink-0 flex items-center justify-center">
-            <span className="text-gray-400">No preview</span>
-          </div>
-        )} */}
-
         <div className="flex flex-col flex-1 min-w-0 py-2">
           <p className="text-xs text-gray-600 inline-flex">
             {highlightText(publication.publisher ?? "", searchTerms)}
