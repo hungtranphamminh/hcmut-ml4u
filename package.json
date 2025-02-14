@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^12.4.2",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "next": "15.1.5",
