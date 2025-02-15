@@ -14,9 +14,9 @@ const ContactPage = () => {
         </div>
       </div>
 
-      <div className="xl:w-[calc(100%-80px)] h-[calc(100%-60px)] flex overflow-y-auto scrollbar-hidden relative">
+      <div className=" h-[calc(100%-60px)] flex overflow-y-auto scrollbar-hidden relative">
         {/* Left most bar */}
-        <div
+        {/* <div
           className="sticky top-0 left-0 hidden md:flex z-30
             pl-4 items-center h-full bg-white text-xs text-blue-600 font-medium w-[80px]"
         >
@@ -28,7 +28,7 @@ const ContactPage = () => {
           >
             RECRUIT 2025
           </div>
-        </div>
+        </div> */}
 
         {/* Main content */}
         <div className="@container flex items-start justify-between relative w-full h-full flex-wrap">
@@ -40,11 +40,11 @@ const ContactPage = () => {
           >
             {/* [Mobile] - Title */}
             <div className="relative z-10 @3xl:hidden flex flex-col items-center w-full">
-              <div className="font-geist pl-3 text-8xl bg-white bg-clip-text text-transparent bg-opacity-50 font-extralight pt-4">
+              <div className="pl-3 text-8xl bg-white bg-clip-text text-transparent bg-opacity-50 font-extralight pt-4">
                 05
               </div>
               <div className=" min-w-[200px] w-fit py-2 px-3 ">
-                <div className="font-medium text-3xl text-white text-nowrap tracking-widest relative uppercase font-geist">
+                <div className="font-medium text-3xl text-white text-nowrap tracking-widest relative uppercase">
                   CONTACT US
                   <div className="absolute -top-[2px] -left-2 w-[20px] h-3/4 border-t-[2px] border-l-[2px] border-white"></div>
                   <div className="absolute -bottom-[2px] -right-2 w-[20px] h-3/4 border-b-[2px] border-r-[2px] border-white"></div>
@@ -62,7 +62,7 @@ const ContactPage = () => {
                 bg-white"
                 >
                   {/* Team name */}
-                  <div className="font-extralight lg:text-5xl md:text-4xl text-3xl text-black text-nowrap tracking-wide relative uppercase font-geist w-fit">
+                  <div className="font-extralight lg:text-5xl md:text-4xl text-3xl text-black text-nowrap tracking-wide relative uppercase w-fit">
                     <span className="font-semibold text-transparent bg-[url('/images/hcm-pic/no1.avif')] bg-[length:300px] bg-bottom bg-clip-text">
                       AI Tech Lab
                     </span>
@@ -81,7 +81,7 @@ const ContactPage = () => {
                 </div>
                 {/*  */}
                 <div className="flex">
-                  <div className="px-5 h-fit w-fit pb-4 bg-white flex flex-col items-center font-geist">
+                  <div className="px-5 h-fit w-fit pb-4 bg-white flex flex-col items-center">
                     {"Innovators".split("").map((char, index) => (
                       <p
                         key={index}
@@ -99,7 +99,7 @@ const ContactPage = () => {
                   {/* Content */}
                   <div className="xl:ml-10 xl:mt-10 md:ml-5 md:mt-5 mt-3 ml-3">
                     <div className=" mx-auto">
-                      <p className=" mb-6 font-geist text-white">
+                      <p className=" mb-6 text-white">
                         The ML4U - AITech Lab evolved from the ML4U group, which
                         has been active since 2020. Our lab is a collaborative
                         research effort at Ho Chi Minh City University of
@@ -121,11 +121,11 @@ const ContactPage = () => {
             <div className="mt-[60px] relative justify-end z-10 @[1200px]:hidden @3xl:block hidden">
               <div className="flex relative w-full justify-end">
                 <div className="flex flex-col items-end w-full">
-                  <div className="font-geist  text-7xl md:text-9xl  bg-white bg-clip-text text-transparent bg-opacity-50 font-extralight pt-4">
+                  <div className=" text-7xl md:text-9xl  bg-white bg-clip-text text-transparent bg-opacity-50 font-extralight pt-4">
                     05
                   </div>
                   <div className=" min-w-[200px] w-fit py-4 pl-6 pr-6 ">
-                    <div className="font-medium lg:text-5xl text-4xl text-white text-nowrap tracking-widest relative uppercase font-geist">
+                    <div className="font-medium lg:text-5xl text-4xl text-white text-nowrap tracking-widest relative uppercase">
                       CONTACT US
                       <div className="absolute -top-[2px] -left-3 w-[20px] h-3/4 border-t-[2px] border-l-[2px] border-white"></div>
                       <div className="absolute -bottom-[2px] -right-3 w-[20px] h-3/4 border-b-[2px] border-r-[2px] border-white"></div>
@@ -136,7 +136,7 @@ const ContactPage = () => {
             </div>
 
             {/* Collab information section */}
-            <section className="w-full text-white font-geist my-5">
+            <section className="w-full text-white my-5">
               <div className="uppercase font-medium text-xl mb-2">
                 COLLABORATION OPPORTUNITIES
               </div>
@@ -191,11 +191,11 @@ const ContactPage = () => {
             <div className="top-[80px] absolute hidden justify-end z-10 @[1200px]:flex">
               <div className="flex relative w-full justify-end">
                 <div className="flex flex-col items-end w-full">
-                  <div className=" font-geist  text-5xl md:text-9xl  bg-white bg-clip-text text-transparent bg-opacity-50 font-extralight py-4">
+                  <div className="  text-5xl md:text-9xl  bg-white bg-clip-text text-transparent bg-opacity-50 font-extralight py-4">
                     05
                   </div>
                   <div className=" min-w-[200px] w-fit pl-6 pr-6 ">
-                    <div className="font-medium lg:text-5xl text-4xl text-white text-nowrap tracking-widest relative uppercase font-geist">
+                    <div className="font-medium lg:text-5xl text-4xl text-white text-nowrap tracking-widest relative uppercase">
                       CONTACT US
                       <div className="absolute -top-[2px] -left-3 w-[20px] h-3/4 border-t-[2px] border-l-[2px] border-white"></div>
                       <div className="absolute -bottom-[2px] -right-3 w-[20px] h-3/4 border-b-[2px] border-r-[2px] border-white"></div>
@@ -228,7 +228,7 @@ const ContactPage = () => {
                 className=" text-white relative z-10 h-full
             "
               >
-                <p className=" font-geist text-white p-4 ">
+                <p className=" text-white p-4 ">
                   Our lab is located at Faculty of Computer Science and
                   Engineering Ho Chi Minh City University of Technology 268 Ly
                   Thuong Kiet Street, District 10 Ho Chi Minh City, Vietnam
@@ -264,7 +264,7 @@ const ContactPage = () => {
               </div>
             </div>
             {/* Right content bar */}
-            <div className="px-5 h-fit w-fit py-2 bg-white flex flex-col items-center font-geist">
+            <div className="px-5 h-fit w-fit py-2 bg-white flex flex-col items-center">
               {"Visit Us".split("").map((char, index) => (
                 <p
                   key={index}

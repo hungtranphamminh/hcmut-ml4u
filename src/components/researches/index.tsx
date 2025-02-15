@@ -67,22 +67,22 @@ export default function ResearchList({ publications }: Props) {
 
   return (
     <div className="min-h-screen w-full pt-[60px] ">
-      <div className="xl:w-[calc(100%-80px)] w-full flex flex-col items-center justify-center">
+      <div className=" w-full flex flex-col items-center justify-center">
         <div className="w-full max-w-7xl px-4 relative ">
           {/* Section title & description */}
           <div className="w-full flex flex-col items-center justify-center">
-            <div className="font-geist pl-3 text-9xl bg-white bg-clip-text text-transparent bg-opacity-50 font-extralight pt-4">
+            <div className="pl-3 text-9xl bg-white bg-clip-text text-transparent bg-opacity-50 font-extralight pt-4">
               02
             </div>
             <div className=" min-w-[200px] w-fit py-2 px-3 ">
-              <div className="font-medium lg:text-4xl text-3xl text-white text-nowrap tracking-widest relative uppercase font-geist">
+              <div className="font-medium lg:text-4xl text-3xl text-white text-nowrap tracking-widest relative uppercase">
                 Publications
                 <div className="absolute -top-[2px] -left-2 w-[20px] h-3/4 border-t-[2px] border-l-[2px] border-white"></div>
                 <div className="absolute -bottom-[2px] -right-2 w-[20px] h-3/4 border-b-[2px] border-r-[2px] border-white"></div>
               </div>
             </div>
 
-            <div className="font-geist text-center text-white text-base mt-4 max-w-3xl">
+            <div className="text-center text-white text-base mt-4 max-w-3xl">
               Below are publications by our members, including some completed
               during their time at other industry partners (e.g., VinAI).
             </div>
@@ -108,7 +108,7 @@ export default function ResearchList({ publications }: Props) {
           <div className="space-y-12 mt-8 relative pb-20">
             {[...filteredPublications].toReversed().map((yearGroup) => (
               <div key={yearGroup.year} className="space-y-6">
-                <h2 className="text-2xl font-bold text-white border-b py-2 px-4 z-40 font-geist">
+                <h2 className="text-2xl font-bold text-white border-b py-2 px-4 z-40">
                   {yearGroup.year}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">

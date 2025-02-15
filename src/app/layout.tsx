@@ -36,7 +36,7 @@ export default function RootLayout({
           </div>
         </div>
 
-        <main className="absolute z-10 top-0 left-0 h-screen w-full overflow-y-auto scrollbar-hidden">
+        <main className="absolute z-10 top-0 left-0 h-screen w-full overflow-y-auto scrollbar-hidden font-geist">
           <FullPagePopupWrapper>{children}</FullPagePopupWrapper>
         </main>
       </body>

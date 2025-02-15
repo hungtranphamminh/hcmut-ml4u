@@ -15,7 +15,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="xl:w-[80px] h-screen fixed  top-0 right-0 z-[9999] xl:shadow-md">
+    <div className="xl:w-[80px] h-screen sticky top-0 right-0 z-[9999] xl:shadow-md">
       {/* Intersection with the header */}
       <div className="w-full px-4 h-[60px] flex items-center justify-center md:bg-black md:bg-opacity-15">
         <button>
@@ -37,7 +37,7 @@ export default function Sidebar() {
               <div key={page.path} className="flex flex-col items-center">
                 <Link
                   href={page.path}
-                  className={`text-lg font-geist_mono transition-colors font-geist duration-300 relative
+                  className={`text-lg_mono transition-colors duration-300 relative
                     ${
                       isActive
                         ? "text-white"
