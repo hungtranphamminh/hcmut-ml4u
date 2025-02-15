@@ -13,7 +13,7 @@ export default function MembersGroup({
           className=" w-full flex flex-wrap justify-center items-center 
         md:gap-8 xl:gap-10 gap-6"
         >
-          <div className="max-w-[300px] font-geist p-4">
+          <div className="max-w-[300px] p-4">
             <h2 className="text-xl md:text-4xl font-bold text-right flex flex-col items-end">
               <div className="bg-white w-fit">
                 <span className=" uppercase bg-[url('/images/background.jpg')] bg-[center_bottom] bg-clip-text text-transparent leading-none p-[2px]">

@@ -7,7 +7,7 @@ export default function Founder({ pi }: { readonly pi: TeamMember[] }) {
     <section className="w-full flex flex-col items-center justify-center">
       {/* Title */}
       <div
-        className="xl:text-4xl md:text-3xl text-xl font-light uppercase mt-10 font-geist text-white py-1 border-t border-b
+        className="xl:text-4xl md:text-3xl text-xl font-light uppercase mt-10 text-white py-1 border-t border-b
       "
       >
         Principle Investigator

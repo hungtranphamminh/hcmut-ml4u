@@ -11,7 +11,7 @@ const TeamPage = ({ pi, teamMembers, alumni }: TeamPageProps) => {
   return (
     <div
       className="scroll-smooth 
-    w-full xl:w-[calc(100%-80px)] xl:pl-20
+    w-full xl:w-[calc(100%-160px)]
     relative flex flex-col items-center justify-start"
     >
       {/* Header underlay for readability enhancement */}
