@@ -5,15 +5,15 @@ import { Project } from "@/lib/get-projects";
 import { matchesQuery, splitQuery } from "@/lib/research-search";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
+import ProjectDetailOverlay from "./project-detail";
 import ProjectCard from "./project-card";
-import ProjectFullDetail from "./project-detail";
 
 export default function ProjectsPage({
   projects,
 }: {
   readonly projects: Project[];
 }) {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState<number>(-1);
   const searchParams = useSearchParams();
   const router = useRouter();
   const currentSearch = searchParams.get("search") || "";
@@ -50,6 +50,10 @@ export default function ProjectsPage({
     setSelectedIndex(index);
   };
 
+  const handleCloseOverlay = () => {
+    setSelectedIndex(-1);
+  };
+
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
     if (debouncedUrlUpdate) {
@@ -65,20 +69,29 @@ export default function ProjectsPage({
 
   return (
     <div className="min-h-screen w-full">
-      <div className="xl:w-[calc(100%-80px)] w-full flex flex-col items-center justify-center">
-        <div className="w-full flex flex-wrap relative min-h-screen h-screen pt-[60px] xl:pl-20">
+      <div className=" w-full flex flex-col items-center justify-center">
+        <div className="w-full flex flex-wrap relative min-h-screen h-screen pt-[60px]">
           <div
-            className="w-1/2 h-full overflow-y-auto
-          [&::-webkit-scrollbar]:w-[6px] 
-  [&::-webkit-scrollbar-track]:bg-white/20
-  [&::-webkit-scrollbar-thumb]:bg-white
-  [&::-webkit-scrollbar-thumb]:rounded-full
-          flex flex-col justify-between"
+            className={`w-full h-full overflow-y-auto
+            [&::-webkit-scrollbar]:w-[6px] 
+            [&::-webkit-scrollbar-track]:bg-white/20
+            [&::-webkit-scrollbar-thumb]:bg-white
+            [&::-webkit-scrollbar-thumb]:rounded-full
+            flex flex-col justify-between
+
+            transition-all duration-100 ease-linear
+            ${selectedIndex !== -1 ? "overflow-hidden" : ""}
+            `}
           >
-            <div className="w-full">
+            <div className="w-full xl:pt-20 pt-10 flex flex-col items-center">
               {/* Description */}
-              <div className=" font-geist text-sm text-white w-full flex items-start justify-center mb-6 gap-6">
-                <div className="max-w-2xl grow self-stretch flex items-center justify-center text-right py-4 px-3 rounded-br-md bg-white text-black font-geist">
+              <div
+                className={`text-sm text-white w-full flex items-end justify-center mb-6 gap-6
+                ${selectedIndex !== -1 ? "opacity-0" : "opacity-100"}
+                transition-all duration-300 ease-linear
+                `}
+              >
+                <div className="max-w-lg grow flex items-center justify-center text-pretty text-right py-4 px-3 text-white ">
                   Currently, several projects are being carried out by us. These
                   initiatives are being led by different groups within our team,
                   each contributing their unique expertise. All of these
@@ -87,11 +100,11 @@ export default function ProjectsPage({
                 </div>
 
                 <div className="px-4 flex flex-col items-start">
-                  <div className=" relative font-geist leading-none text-9xl text-transparent bg-white/70 bg-clip-text bg-bottom bg-opacity-50 font-extralight">
+                  <div className="relative leading-none text-9xl text-transparent bg-white/70 bg-clip-text bg-bottom bg-opacity-50 font-extralight">
                     {"03"}
                   </div>
                   <div className="-mt-2">
-                    <div className="font-semibold lg:text-4xl text-3xl text-transparent bg-white bg-clip-text bg-bottom text-nowrap tracking-widest relative uppercase font-geist">
+                    <div className="font-semibold lg:text-4xl text-3xl text-transparent bg-white bg-clip-text bg-bottom text-nowrap tracking-widest relative uppercase">
                       Projects
                       <div className="absolute -top-[2px] -left-2 w-[20px] h-3/4 border-t-[2px] border-l-[2px] border-white"></div>
                       <div className="absolute -bottom-[2px] -right-2 w-[20px] h-3/4 border-b-[2px] border-r-[2px] border-white"></div>
@@ -100,7 +113,14 @@ export default function ProjectsPage({
                 </div>
               </div>
 
-              <div className="sticky top-0 px-6 z-40">
+              {/* Search bar */}
+              <div
+                className={`sticky top-0 px-6 z-40 max-w-3xl w-full
+                  transition-all duration-200 ease-linear
+                  ${selectedIndex !== -1 ? "opacity-0" : "opacity-100"}
+
+                `}
+              >
                 <div className="relative mx-auto">
                   <input
                     ref={inputRef}
@@ -109,13 +129,18 @@ export default function ProjectsPage({
                     onChange={handleSearchChange}
                     placeholder='Search projects... Use "word1" "word2" for OR search'
                     className="w-full px-4 py-2 bg-black/60 backdrop-blur-md 
-                       border border-white/20 rounded-md
-                       text-white placeholder-white/50"
+                      border border-white/20 rounded-md
+                      text-white placeholder-white/50"
                   />
                 </div>
               </div>
 
-              <div className="w-full flex flex-col gap-2 px-6 mt-4">
+              <div
+                className={`w-full flex flex-wrap gap-10 px-6 mt-20 items-stretch justify-center
+                  transition-all duration-100 ease-linear
+                  ${selectedIndex !== -1 ? "opacity-0" : "opacity-100"}
+                `}
+              >
                 {filteredPublications.map((project, index) => (
                   <ProjectCard
                     key={index}
@@ -129,16 +154,13 @@ export default function ProjectsPage({
             </div>
           </div>
 
-          {/* Project Detail Information */}
-          <div className="w-1/2 h-full flex flex-col justify-between relative group">
-            <div className="flex-grow overflow-hidden">
-              <ProjectFullDetail
-                projects={filteredPublications}
-                selectedIndex={selectedIndex}
-                onIndexChange={setSelectedIndex}
-              />
-            </div>
-          </div>
+          {/* Project Detail Overlay */}
+          <ProjectDetailOverlay
+            projects={filteredPublications}
+            selectedIndex={selectedIndex}
+            onClose={handleCloseOverlay}
+            onIndexChange={setSelectedIndex}
+          />
         </div>
       </div>
     </div>
