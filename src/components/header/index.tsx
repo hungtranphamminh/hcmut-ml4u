@@ -27,10 +27,10 @@ export default function Sidebar() {
       <div className="flex gap-2 items-center">
         <Image src={logoIcon} alt="logo" width={30} height={30} />
         <div>
-          <p className="leading-none font-semibold text-white text-xs font-geist">
+          <p className="leading-none font-semibold text-white text-xs">
             HCMUT - 2025
           </p>
-          <div className="font-geist text-white text-xl font-semibold tracking-tighter">
+          <div className="text-white text-xl font-semibold tracking-tighter">
             AI Tech Lab
           </div>
         </div>
@@ -41,7 +41,7 @@ export default function Sidebar() {
           <Link key={page.path} href={page.path}>
             <div className="w-fit px-4 group flex flex-col items-center justify-center cursor-pointer">
               <div
-                className={`text-base font-semibold text-white font-geist flex items-center gap-2
+                className={`text-base font-semibold text-white flex items-center gap-2
                 `}
               >
                 <span className="text-xs text-slate-500 hidden xl:inline-block">{`<0${
