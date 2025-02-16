@@ -111,8 +111,8 @@ export default function ResearchList({ publications }: Props) {
                 <h2 className="text-2xl font-bold text-white border-b py-2 px-4 z-40">
                   {yearGroup.year}
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {yearGroup.papers.map((paper) => (
+                <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                  {[...yearGroup.papers].toReversed().map((paper) => (
                     <PublicationCard
                       key={paper.id}
                       publication={paper}
