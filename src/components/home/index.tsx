@@ -1,8 +1,10 @@
 export default function HomePage() {
   return (
-    <div className="w-full h-svh flex flex-col items-center justify-center">
-      <div className="max-w-[700px] text-center flex flex-col items-center gap-6">
-        <h1 className="text-6xl font-bold">ML4U - AITech Lab</h1>
+    <div className="w-full flex flex-col items-center pt-[120px]">
+      <div className="max-w-[700px] text-center flex flex-col items-center sm:text-base text-sm  gap-6 text-white px-6 md:px-10 ">
+        <h1 className="xl:text-6xl font-bold lg:text-4xl text-2xl">
+          ML4U - AITech Lab
+        </h1>
         <p>
           Our lab brings together expertise in computer vision, speech
           processing, and sound manipulation to advance AI research at HCMUT -
