@@ -34,7 +34,7 @@ export default function PublicationCard({
 }: PublicationCardProps) {
   return (
     <div className="w-full text-white bg-black/30 backdrop-blur-md group shadow-lg hover:scale-105 transition-all duration-200 ease-in-out rounded-md border">
-      <div className="flex gap-4 p-4 w-full">
+      <div className="flex md:flex-row flex-col gap-4 p-4 w-full">
         {publication.image && (
           <div className="w-[200px] h-[200px] bg-white relative rounded-md">
             <Image
