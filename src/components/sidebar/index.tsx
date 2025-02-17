@@ -15,9 +15,9 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="xl:w-[80px] h-screen sticky top-0 right-0 z-[9999] xl:shadow-md">
+    <div className=" fixed xl:sticky top-0 right-0 z-[9999] xl:shadow-md">
       {/* Intersection with the header */}
-      <div className="w-full px-4 h-[60px] flex items-center justify-center md:bg-black md:bg-opacity-15">
+      <div className=" w-[80px] px-4 h-[60px] flex items-center justify-center md:bg-black md:bg-opacity-15">
         <button>
           <HamburgerIcon />
         </button>
@@ -25,7 +25,7 @@ export default function Sidebar() {
 
       {/* Navigator */}
       <div
-        className="w-full h-[calc(100%-60px)] flex-col items-center justify-center backdrop-blur-[3px] bg-black bg-opacity-15
+        className=" xl:h-[calc(100vh-60px)] h-0 xl:w-[80px] w-0 flex-col items-center justify-center backdrop-blur-[3px] bg-black bg-opacity-15
         hidden xl:flex
       "
       >
