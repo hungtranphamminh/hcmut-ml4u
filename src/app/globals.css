@@ -44,3 +44,15 @@ html {
     transform: translateY(-40px);
   }
 }
+
+.cornered:before {
+  content:'';
+  overflow: hidden;
+  position:absolute;
+  width:44px;
+  height:44px;
+  top:-22px;
+  right:-22px;
+  border-radius:100%;
+  box-shadow:0 0 0 2000px #fff;/* here draw the shadow inside its parent , maybe z-index will be required for content */
+}

@@ -1,4 +1,4 @@
-export default function ArrowIconDark() {
+export default function ArrowIcon() {
   return (
     <svg
       width="24px"
@@ -11,7 +11,7 @@ export default function ArrowIconDark() {
         <path
           id="Vector"
           d="M21 12L16 7M21 12L16 17M21 12H3"
-          className="stroke-[#fff] group-hover:stroke-[#000] transition-all duration-300 ease-in-out"
+          className="stroke-[#000] group-hover:stroke-[#fff] transition-all duration-300 ease-in-out"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
