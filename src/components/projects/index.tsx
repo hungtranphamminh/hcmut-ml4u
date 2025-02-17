@@ -86,7 +86,7 @@ export default function ProjectsPage({
             <div className="w-full xl:pt-20 pt-10 flex flex-col items-center">
               {/* Description */}
               <div
-                className={`text-sm text-white w-full flex items-end justify-center mb-6 gap-6
+                className={`text-sm text-white w-full flex sm:flex-row flex-col-reverse items-end justify-center mb-6 gap-6
                 ${selectedIndex !== -1 ? "opacity-0" : "opacity-100"}
                 transition-all duration-300 ease-linear
                 `}
