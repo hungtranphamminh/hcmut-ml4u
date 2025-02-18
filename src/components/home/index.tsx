@@ -6,26 +6,15 @@ export default function HomePage() {
           ML4U - AITech Lab
         </h1>
         <p>
-          Our lab brings together expertise in computer vision, speech
-          processing, and sound manipulation to advance AI research at HCMUT -
-          VNUHCM. Through our collaboration with ML4U Lab, we create innovative
-          solutions at the intersection of multiple AI disciplines. We are based
-          at Ho Chi Minh City University of Technology, but actively collaborate
-          with partners worldwide. The group is led by Dr. Nguyen Duc Dung,
-          Principal Investigator at Ho Chi Minh City University of Technology
-          (HCMUT), VNUHCM.
-        </p>
-        <p>
-          Our research spans deep learning, natural language processing, and
-          computer vision, with applications across various industries. We
-          emphasize both theoretical advancements and real-world
-          implementations, working closely with academic and industry partners
-          to solve practical challenges through machine learning innovations.
-        </p>
-        <p>
-          Find more information about our team on the members page, and explore
-          our research output on the publications page. We&apos;ll post updates
-          about our work here.
+          We are a dynamic research lab at HCMUT - VNUHCM, specializing in AI
+          innovations across computer vision, speech processing, and sound
+          manipulation. Led by Dr. Nguyen Duc Dung, we collaborate with global
+          partners to develop cutting-edge solutions for real-world challenges.
+          Our work spans deep learning, natural language processing, and
+          computer vision, with an emphasis on both theoretical research and
+          practical applications across various industries. Visit the Members
+          and Publications pages to learn more about our team and research. Stay
+          tuned for updates!
         </p>
       </div>
     </div>
