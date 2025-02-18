@@ -20,12 +20,12 @@ export default function Founder({ pi }: { readonly pi: TeamMember[] }) {
       "
       >
         {/* Avatar */}
-        <div className="shrink-0 flex flex-col items-center">
+        <div className="shrink-0 flex flex-col items-center rounded-lg">
           <div className="relative w-full  flex items-center justify-center">
             <img
               src={currentFounder.image}
               alt={currentFounder.name}
-              className="w-full h-full max-h-[300px]"
+              className="w-full h-full max-h-[300px] rounded-lg border shadow-sm"
             />
           </div>
         </div>
