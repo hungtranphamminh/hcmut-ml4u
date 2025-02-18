@@ -7,35 +7,38 @@ import Image from "next/image";
 
 const ContactPage = () => {
   return (
-    <div className="w-full h-screen overflow-y-auto scrollbar-hidden relative text-white">
+    <div className="w-full min-h-screen relative text-white">
       {/* Bg decorator for header */}
-      <div className="w-full h-[60px] bg-[url('/images/hcm-pic/no1.avif')] bg-[length:2000px] bg-[top_70%_left_60%] fixed">
-        <div className="absolute w-full h-full bg-blue-950 bg-opacity-50">
-          {/* <div className="w-full h-full bg-black bg-opacity-55"></div> */}
-        </div>
-      </div>
 
       {/* Main content */}
-      <div className="flex flex-col items-center justify-center relative w-full my-[60px] pt-20 md:px-10 px-4">
+      <div className="flex flex-col items-center justify-end min-h-screen overflow-y-auto relative z-10  w-full pt-20 md:px-10 px-4 ">
+        <div className="absolute w-full h-1/2 bg-white bottom-0 left-0"></div>
+
+        {/* Section title */}
+        <div className="flex flex-col items-center">
+          <div className="text-9xl  bg-white bg-clip-text text-transparent bg-opacity-50 font-extralight">
+            05
+          </div>
+          <div className=" min-w-[200px] w-fit py-2 px-3 ">
+            <div className="font-medium lg:text-4xl text-3xl text-white text-nowrap tracking-widest relative uppercase">
+              Contact Us
+              <div className="absolute -top-[2px] -left-2 w-[20px] h-3/4 border-t-[2px] border-l-[2px] border-white"></div>
+              <div className="absolute -bottom-[2px] -right-2 w-[20px] h-3/4 border-b-[2px] border-r-[2px] border-white"></div>
+            </div>
+          </div>
+
+          <div className="italic">Let&apos;s talk about our next projects!</div>
+        </div>
+
         {/* Contact information */}
-        <div className="w-fit flex flex-col items-center justify-center bg-black/30 backdrop-blur-md rounded-md relative">
+        <div className="w-fit flex flex-col items-center justify-center rounded-lg relative mt-[60px] ">
           <section
-            className="flex lg:max-w-3xl  xl:max-w-4xl md:flex-row flex-col items-stretch border rounded-lg
+            className="flex lg:max-w-3xl  xl:max-w-5xl md:flex-row w-full flex-col items-stretch rounded-lg pb-10
           "
           >
             {/* Content */}
             <div className=" md:w-1/2 w-full flex flex-col text-base text-black">
-              <div className="flex w-full items-start gap-1 justify-between bg-white rounded-tl-lg p-4">
-                <div>
-                  <div className="text-3xl font-semibold">Get in touch</div>
-
-                  <div className="border-b border-b-slate-400 pb-4 italic">
-                    Let&apos;s talk about our next projects together!
-                  </div>
-                </div>
-              </div>
-
-              <div className="px-4 py-3 bg-white text-black">
+              <div className="px-4 py-3 bg-white text-black rounded-tl-lg">
                 We welcome collaboration proposals from industry partners,
                 academic institutions, prospective graduate students, and
                 research internship candidates.
@@ -94,20 +97,18 @@ const ContactPage = () => {
                 </div>
                 <div className="w-full flex items-center gap-2 relative z-10">
                   {/* Title card */}
-                  <div className="  w-2/6 shrink-0 self-stretch  relative ">
-                    <div className="relative z-20 flex flex-col items-start w-full bg-white rounded-bl-md rounded-tr-2xl h-full">
-                      <div
-                        className=" leading-none text-5xl font-semibold text-transparent bg-clip-text bg-[url('/images/hcm-pic/no1.avif')] bg-[top_80%_left_45%] pt-4"
-                        style={{
-                          transform: "scaleX(1.3)",
-                        }}
-                      >
-                        05
-                      </div>
-                      <div className=" w-fit py-2 ">
-                        <div className="font-semibold sm:text-xl text-sm -ml-1 text-black text-nowrap tracking-tighter relative uppercase">
-                          CONTACT US
-                        </div>
+                  <div className="  w-3/6 shrink-0   relative ">
+                    <div className="relative z-20 flex gap-2 py-1 items-center w-full bg-white rounded-bl-md rounded-tr-2xl h-full">
+                      <Image
+                        src={locationIcon}
+                        alt="location"
+                        width={20}
+                        height={20}
+                      />
+
+                      <div className="text-balance leading-none text-base font-semibold text-transparent bg-clip-text bg-[url('/images/hcm-pic/no1.avif')] bg-bottom">
+                        Faculty of Computer Science and Engineering, Ho Chi Minh
+                        City University of Technology.{" "}
                       </div>
                     </div>
 
@@ -121,35 +122,22 @@ const ContactPage = () => {
                       <div className="cornered w-full h-full relative overflow-hidden"></div>
                     </div>
                   </div>
-
-                  <div className="flex grow gap-2 p-2 text-white">
-                    <Image
-                      src={locationIcon}
-                      alt="Location Icon"
-                      width={24}
-                      height={24}
-                    />
-                    <div className="text-xs">
-                      Faculty of Computer Science and Engineering, Ho Chi Minh
-                      City University of Technology.
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
 
             {/* Map */}
             <div
-              className=" grow self-stretch border rounded-r-lg
+              className=" grow self-stretch rounded-r-lg
               relative group overflow-hidden 
-              transition-all duration-500 ease-in-out shadow-xl
+              transition-all duration-500 ease-in-out bg-white
             "
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.495656880097!2d106.65572007465535!3d10.772909189387625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ec3c161a3fb%3A0xef77cd47a1cc691e!2sHo%20Chi%20Minh%20City%20University%20of%20Technology%20(HCMUT)!5e0!3m2!1sen!2s!4v1708087524659!5m2!1sen!2s"
                 className="  w-full xl:max-w-4xl lg:max-w-3xl h-full border-0"
                 allowFullScreen={true}
-                loading="lazy"
+                loading="eager"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="HCMUT Location Map"
               />
@@ -157,7 +145,7 @@ const ContactPage = () => {
           </section>
 
           {/* Title tag */}
-          <div className="bg-white py-1 absolute top-4 left-0 -translate-x-full rounded-l md:block hidden">
+          {/* <div className="bg-white py-1 absolute top-4 left-0 -translate-x-full rounded-l md:block hidden">
             <div
               className="text-3xl font-medium text-nowrap text-transparent bg-[url('/images/hcm-pic/no1.avif')] bg-[length:2000px] bg-clip-text bg-[top_65%_left_50%]"
               style={{
@@ -166,16 +154,11 @@ const ContactPage = () => {
             >
               AITech Lab
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
       {/* Bottom decorator */}
-      <div className="fixed md:block hidden bottom-0 z-20 left-0 w-full h-[60px] bg-[url('/images/hcm-pic/no1.avif')] bg-[length:2500px] bg-[top_90%_left_50%]">
-        <div className="absolute w-full h-full bg-blue-950 bg-opacity-30">
-          <div className="w-full h-full bg-black bg-opacity-15 "></div>
-        </div>
-      </div>
     </div>
   );
 };
