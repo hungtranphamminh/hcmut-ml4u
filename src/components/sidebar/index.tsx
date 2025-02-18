@@ -11,14 +11,16 @@ const PAGE_PATHS = [
   { name: "Contact", path: "/contact" },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({
+  setIsMenuOpen,
+}: Readonly<{ setIsMenuOpen: (value: boolean) => void }>) {
   const pathname = usePathname();
 
   return (
     <div className=" fixed xl:sticky top-0 right-0 z-[9999] xl:shadow-md">
       {/* Intersection with the header */}
       <div className=" w-[80px] px-4 h-[60px] flex items-center justify-center md:bg-black md:bg-opacity-15">
-        <button>
+        <button onClick={() => setIsMenuOpen(true)} className="md:hidden">
           <HamburgerIcon />
         </button>
       </div>
@@ -40,8 +42,8 @@ export default function Sidebar() {
                   className={`text-lg_mono transition-colors duration-300 relative
                     ${
                       isActive
-                        ? "text-white"
-                        : "text-gray-500 hover:text-gray-300"
+                        ? "text-white scale-110"
+                        : "text-gray-500 hover:text-gray-300 hover:scale-110"
                     }`}
                 >
                   {"0" + (index + 1)}
