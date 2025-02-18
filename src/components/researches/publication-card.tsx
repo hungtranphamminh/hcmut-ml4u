@@ -1,7 +1,7 @@
 import { Paper } from "@/types/research/research-types";
 import Link from "next/link";
-import authorIcon from "@images/shared/author.svg";
-import dateIcon from "@images/shared/date.svg";
+import authorIcon from "@images/shared/author-black.svg";
+import dateIcon from "@images/shared/date-black.svg";
 import Image from "next/image";
 
 interface PublicationCardProps {
@@ -33,7 +33,7 @@ export default function PublicationCard({
   searchTerms,
 }: PublicationCardProps) {
   return (
-    <div className="w-full text-white bg-black/30 backdrop-blur-md group shadow-lg hover:scale-105 transition-all duration-200 ease-in-out rounded-md border">
+    <div className="w-full text-black bg-white group shadow-lg hover:scale-105 transition-all duration-200 ease-in-out rounded-md border">
       <div className="flex md:flex-row flex-col gap-4 p-4 w-full">
         {publication.image && (
           <div className="w-[200px] h-[200px] bg-white relative rounded-md">
@@ -53,7 +53,7 @@ export default function PublicationCard({
           </p>
 
           {/* Title */}
-          <h3 className="text-base leading-[120%] font-bold mt-1 mb-2 py-1 border-b border-t">
+          <h3 className="text-base leading-[120%] font-bold mt-1 mb-2 py-1 border-b border-t border-black/60">
             <Link href={publication.link} target="_blank">
               {highlightText(publication.title, searchTerms)}
             </Link>

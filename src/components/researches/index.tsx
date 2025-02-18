@@ -108,8 +108,12 @@ export default function ResearchList({ publications }: Props) {
           <div className="space-y-12 mt-8 relative pb-20">
             {[...filteredPublications].toReversed().map((yearGroup) => (
               <div key={yearGroup.year} className="space-y-6">
-                <h2 className="text-2xl font-bold text-white border-b py-2 px-4 z-40">
+                <h2 className="text-3xl font-bold text-white border-b py-2 px-4 z-40 flex gap-2 items-end">
                   {yearGroup.year}
+
+                  <p className="font-light text-base pl-2 border-l leading-loose">
+                    {yearGroup.papers.length} publications
+                  </p>
                 </h2>
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
                   {[...yearGroup.papers].toReversed().map((paper) => (
