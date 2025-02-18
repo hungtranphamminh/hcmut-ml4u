@@ -102,7 +102,7 @@ export default function ProjectDetailOverlay({
                   ></div>
 
                   <div
-                    className="text-xs
+                    className="text-xs sm:text-sm
                   px-4 py-2 backdrop-blur-sm text-white rounded-md transition-all group-hover:text-black duration-300 ease-in-out relative z-10"
                   >
                     Close
