@@ -38,11 +38,11 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
       <div className="md:h-[290px] h-[220px] w-full relative">
         {/* Member avatar */}
         <div className="relative grow h-full shadow-xl overflow-hidden rounded-lg">
-          <Image
-            src={"/" + member.image}
+          <img
+            src={member.image}
             alt={member.name}
             className="w-full h-full group-hover:scale-110 transition-all duration-300 rounded-lg"
-            layout="fill"
+            // layout="fill"
             style={{
               objectFit: "cover",
             }}
@@ -135,8 +135,8 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
                     href={`mailto:${member.links.email}`}
                     className="text-blue-500 hover:text-blue-600 transition-colors flex items-center justify-start"
                   >
-                    <Image
-                      src={"/images/shared/email-icon.svg"}
+                    <img
+                      src={"images/shared/email-icon.svg"}
                       alt="email"
                       width={20}
                       height={20}
@@ -158,8 +158,8 @@ const MemberCard = ({ member }: { member: TeamMember }) => {
                         rel="noopener noreferrer"
                         className="text-blue-500 hover:text-blue-600 transition-colors flex items-center justify-start"
                       >
-                        <Image
-                          src={"/images/shared/" + platform + "-icon.svg"}
+                        <img
+                          src={"images/shared/" + platform + "-icon.svg"}
                           alt={platform}
                           width={20}
                           height={20}
