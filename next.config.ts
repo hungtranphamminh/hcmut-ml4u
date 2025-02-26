@@ -12,8 +12,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   output: "export",
-  // basePath: "",
-  // trailingSlash: true
+  basePath: process.env.NODE_ENV === "production" ? "/hungtranghamminh.github.io" : "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "/hungtranghamminh.github.io" : "",
+  trailingSlash: true
 };
-
-export default nextConfig;
