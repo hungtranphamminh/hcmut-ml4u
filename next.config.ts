@@ -9,7 +9,11 @@ const nextConfig: NextConfig = {
         hostname: "**",
       },
     ],
-  }
+    unoptimized: true,
+  },
+  output: "export",
+  basePath: "",
+  trailingSlash: true
 };
 
 export default nextConfig;
