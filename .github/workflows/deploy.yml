@@ -1,4 +1,4 @@
-name: Deploy Next.Js to GitHub Pages
+name: Deploy Next.Js to GitHub Pages with Diagnostics
 
 on:
   push:
@@ -61,6 +61,25 @@ jobs:
         with:
           static_site_generator: next
 
+      # Log the input structure
+      - name: Inspect project structure
+        run: |
+          echo "==== Project root structure ===="
+          ls -la ${{ env.PROJECT_DIR }}
+
+          echo "==== Public folder structure ===="
+          ls -la ${{ env.PROJECT_DIR }}/public
+
+          echo "==== Public/images folder structure ===="
+          if [ -d "${{ env.PROJECT_DIR }}/public/images" ]; then
+            find ${{ env.PROJECT_DIR }}/public/images -type f | sort
+          else
+            echo "Public/images directory does not exist"
+          fi
+
+          echo "==== Next.js config ===="
+          cat ${{ env.PROJECT_DIR }}/next.config.js
+
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -78,11 +97,40 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.run-command }} next build
         working-directory: ${{ env.PROJECT_DIR }}
 
-      - name: Copy images to root level
+      # Log the output structure
+      - name: Inspect build output structure
         run: |
-          mkdir -p out/images
-          cp -r public/images/* out/images/
-        working-directory: ${{ env.PROJECT_DIR }}
+          echo "==== Out folder structure ===="
+          ls -la ${{ env.PROJECT_DIR }}/out
+
+          echo "==== Complete output directory tree ===="
+          find ${{ env.PROJECT_DIR }}/out -type d | sort
+
+          echo "==== Image files in output ===="
+          find ${{ env.PROJECT_DIR }}/out -type f -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif" -o -name "*.avif" -o -name "*.webp" | sort
+
+          echo "==== HTML files in output ===="
+          find ${{ env.PROJECT_DIR }}/out -type f -name "*.html" | sort | head -5
+
+          echo "==== Sample HTML content (first file) ===="
+          FIRST_HTML=$(find ${{ env.PROJECT_DIR }}/out -type f -name "*.html" | head -1)
+          if [ -n "$FIRST_HTML" ]; then
+            grep -A 10 -B 10 "background" $FIRST_HTML || echo "No background references found"
+          fi
+
+      # Try simple copy
+      - name: Copy images to output
+        run: |
+          if [ -d "${{ env.PROJECT_DIR }}/public/images" ]; then
+            echo "Copying images directory to output..."
+            mkdir -p ${{ env.PROJECT_DIR }}/out/images
+            cp -r ${{ env.PROJECT_DIR }}/public/images/* ${{ env.PROJECT_DIR }}/out/images/
+            echo "Copy complete."
+            echo "==== Images in output after copy ===="
+            find ${{ env.PROJECT_DIR }}/out/images -type f | sort
+          else
+            echo "Public/images directory does not exist, skipping copy"
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
