@@ -3,6 +3,8 @@ import { TeamMember } from "@/types/team/team-types";
 export default function Founder({ pi }: { readonly pi: TeamMember[] }) {
   const currentFounder = pi[0];
 
+  const trailingSlash = process.env.NODE_ENV !== "production" ? "/" : "";
+
   return (
     <section className="w-full flex flex-col items-center justify-center">
       {/* Title */}
@@ -23,7 +25,7 @@ export default function Founder({ pi }: { readonly pi: TeamMember[] }) {
         <div className="shrink-0 flex flex-col items-center rounded-lg">
           <div className="relative w-full  flex items-center justify-center">
             <img
-              src={currentFounder.image}
+              src={trailingSlash + currentFounder.image}
               alt={currentFounder.name}
               className="w-full h-full max-h-[300px] rounded-lg border shadow-sm"
             />

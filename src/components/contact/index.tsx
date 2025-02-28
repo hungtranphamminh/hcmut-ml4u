@@ -6,13 +6,15 @@ import ArrowIcon from "../ui/svgs/arrow-icon-dark";
 import Image from "next/image";
 
 const ContactPage = () => {
+  const trailingSlash = process.env.NODE_ENV !== "production" ? "/" : "";
+
   return (
     <div className="w-full min-h-screen relative text-white">
       {/* Bg decorator for header */}
 
       {/* Main content */}
       <div className="flex flex-col items-center justify-end min-h-screen overflow-y-auto relative z-10  w-full pt-20 md:px-10 px-4 ">
-        <div className="absolute w-full h-1/2 bg-white bottom-0 left-0"></div>
+        <div className="absolute w-full h-1/4 bg-white bottom-0 left-0"></div>
 
         {/* Section title */}
         <div className="flex flex-col items-center">
@@ -31,14 +33,14 @@ const ContactPage = () => {
         </div>
 
         {/* Contact information */}
-        <div className="w-fit flex flex-col items-center justify-center rounded-lg relative mt-[60px] ">
+        <div className="w-fit flex flex-col items-center justify-center rounded-2xl relative mt-[60px] ">
           <section
-            className="flex lg:max-w-3xl  xl:max-w-5xl md:flex-row w-full flex-col items-stretch rounded-lg pb-10
+            className="flex lg:max-w-3xl  xl:max-w-5xl md:flex-row w-full flex-col items-stretch rounded-2xl pb-10
           "
           >
             {/* Content */}
             <div className=" md:w-1/2 w-full flex flex-col text-base text-black">
-              <div className="px-4 py-3 bg-white text-black rounded-tl-lg">
+              <div className="px-4 py-3 bg-white text-black rounded-tl-2xl">
                 We welcome collaboration proposals from industry partners,
                 academic institutions, prospective graduate students, and
                 research internship candidates.
@@ -55,7 +57,7 @@ const ContactPage = () => {
               {/* Email */}
               <Link
                 href="mailto:dung.nguyen@hcmut.edu.vn"
-                className=" z-10  group text-lg font-medium w-full px-4
+                className=" z-10  group text-2xl font-medium w-full px-4
                     transition-all duration-300 ease-in-out bg-white
                     "
               >
@@ -81,14 +83,22 @@ const ContactPage = () => {
               </Link>
 
               {/* Location */}
-              <div className="relative pt-60 p-4 bg-white rounded-bl-lg group">
+              <div className="relative pt-60 p-4 bg-white rounded-bl-2xl group">
                 <div className="w-full h-full absolute top-0 left-0 p-4 ">
                   <div
-                    className="w-full h-full bg-[url('/images/hcm-pic/no4.jpg')]  rounded-lg 
+                    className="w-full h-full rounded-2xl relative
                    transition-all duration-300 ease-in-out bg-cover bg-center bg-no-repeat"
                   >
+                    <div className="absolute top-0 left-0 rounded-2xl w-full h-full overflow-hidden">
+                      <img
+                        src={trailingSlash + "images/hcm-pic/no4.jpg"}
+                        alt="Faculty"
+                        className="w-full h-full object-cover object-center rounded-2xl"
+                      />
+                    </div>
+
                     <div
-                      className="w-full h-full bg-gradient-to-t from-black/70 to-transparent rounded-lg
+                      className="relative z-10 w-full h-full bg-gradient-to-t from-black/70 to-transparent rounded-2xl
                     
                     transition-all duration-300 ease-in-out
                     "
@@ -106,9 +116,8 @@ const ContactPage = () => {
                         height={20}
                       />
 
-                      <div className="text-balance leading-none text-base font-semibold text-transparent bg-clip-text bg-[url('/images/hcm-pic/no1.avif')] bg-bottom">
-                        Faculty of Computer Science and Engineering, Ho Chi Minh
-                        City University of Technology.{" "}
+                      <div className="text-balance leading-none text-base font-semibold text-transparent bg-clip-text bg-[url('/images/hcm-pic/no1.avif')] bg-bottom py-3">
+                        Faculty of Computer Science and Engineering
                       </div>
                     </div>
 
@@ -128,7 +137,7 @@ const ContactPage = () => {
 
             {/* Map */}
             <div
-              className=" grow self-stretch rounded-r-lg
+              className=" grow self-stretch rounded-r-2xl
               relative group overflow-hidden 
               transition-all duration-500 ease-in-out bg-white
             "
@@ -143,18 +152,6 @@ const ContactPage = () => {
               />
             </div>
           </section>
-
-          {/* Title tag */}
-          {/* <div className="bg-white py-1 absolute top-4 left-0 -translate-x-full rounded-l md:block hidden">
-            <div
-              className="text-3xl font-medium text-nowrap text-transparent bg-[url('/images/hcm-pic/no1.avif')] bg-[length:2000px] bg-clip-text bg-[top_65%_left_50%]"
-              style={{
-                writingMode: "sideways-lr",
-              }}
-            >
-              AITech Lab
-            </div>
-          </div> */}
         </div>
       </div>
 
