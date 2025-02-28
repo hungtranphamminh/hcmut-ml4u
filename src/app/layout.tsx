@@ -31,6 +31,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative h-screen scrollbar-hidden scroll-smooth overflow-y-auto`}
       >
+        <img
+          src={bg.src}
+          alt=""
+          className="fixed top-0 left-0 w-0 h-0 object-cover"
+        />
         {/* Decorated background */}
         <div
           className={`fixed top-0 left-0 w-full h-screen bg-[${bg.src}] bg-[length:2000px] bg-[top_100%_left_50%]`}
