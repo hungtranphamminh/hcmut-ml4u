@@ -6,10 +6,10 @@ import Image from "next/image";
 
 export const PAGE_PATHS = [
   { name: "Home", path: "/" },
-  { name: "Publications", path: "/researches" },
-  { name: "Projects", path: "/projects" },
-  { name: "Team", path: "/team" },
-  { name: "Contact", path: "/contact" },
+  { name: "Publications", path: "/researches/" },
+  { name: "Projects", path: "/projects/" },
+  { name: "Team", path: "/team/" },
+  { name: "Contact", path: "/contact/" },
 ];
 
 export default function Sidebar() {

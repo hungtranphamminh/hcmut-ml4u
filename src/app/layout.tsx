@@ -32,14 +32,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative h-screen scrollbar-hidden scroll-smooth overflow-y-auto`}
       >
         {/* Decorated background */}
-        <div
-          className={`fixed top-0 left-0 w-full h-screen bg-[url('/images/hcm-pic/no1.avif')] bg-[length:2000px] bg-[top_100%_left_50%]`}
-        >
+        <div className={`fixed top-0 left-0 w-full h-screen`}>
           <div className="w-full h-full relative overflow-hidden">
             <img
               src={trailingSlash + "images/hcm-pic/no1.avif"}
               alt=""
-              className="absolute size-[2000px] top-[100%] left-[50%]"
+              className="absolute w-full h-full object-cover  bottom-0 left-0 "
             />
             <div className="w-full h-full bg-[#102542] bg-opacity-65 relative z-10">
               <div className="w-full h-full bg-gradient-to-b from-[#0A192F] from-[0.5%] via-transparent to-transparent bg-opacity-15"></div>
