@@ -26,23 +26,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const trailingSlash = process.env.NODE_ENV !== "production" ? "/" : "";
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative h-screen scrollbar-hidden scroll-smooth overflow-y-auto`}
       >
-        <img
-          src={bg.src}
-          alt=""
-          className="fixed top-0 left-0 w-0 h-0 object-cover"
-        />
         {/* Decorated background */}
         <div
           className={`fixed top-0 left-0 w-full h-screen bg-[url('/images/hcm-pic/no1.avif')] bg-[length:2000px] bg-[top_100%_left_50%]`}
         >
           <div className="w-full h-full relative overflow-hidden">
             <img
-              src={bg.src}
+              src={trailingSlash + "images/hcm-pic/no1.avif"}
               alt=""
               className="absolute size-[2000px] top-[100%] left-[50%]"
             />
