@@ -38,7 +38,7 @@ export default function RootLayout({
         />
         {/* Decorated background */}
         <div
-          className={`fixed top-0 left-0 w-full h-screen bg-[${bg.src}] bg-[length:2000px] bg-[top_100%_left_50%]`}
+          className={`fixed top-0 left-0 w-full h-screen bg-[url('/images/hcm-pic/no1.avif')] bg-[length:2000px] bg-[top_100%_left_50%]`}
         >
           <div className="w-full h-full bg-[#102542] bg-opacity-65">
             <div className="w-full h-full bg-gradient-to-b from-[#0A192F] from-[0.5%] via-transparent to-transparent bg-opacity-15"></div>
