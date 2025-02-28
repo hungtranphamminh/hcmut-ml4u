@@ -78,6 +78,12 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.run-command }} next build
         working-directory: ${{ env.PROJECT_DIR }}
 
+      - name: Copy images to root level
+        run: |
+          mkdir -p out/images
+          cp -r public/images/* out/images/
+        working-directory: ${{ env.PROJECT_DIR }}
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
