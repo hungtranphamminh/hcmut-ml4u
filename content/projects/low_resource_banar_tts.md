@@ -1,7 +1,7 @@
 ---
 title: Low-resource Bahnar Text-to-Speech
 author: Tan Dat Nguyen, Quang Tuong Lam, Duc Hao Do, Huu Thuc Cai, Hoang Suong Nguyen, Thanh Hung Vo, Duc Dung Nguyen
-image: /images/projects/low_resource_bahnar_tts.png
+image: images/projects/low_resource_bahnar_tts.png
 links:
 github: github.com/signofthefour
 group: normal
