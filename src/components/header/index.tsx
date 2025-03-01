@@ -36,6 +36,7 @@ export default function Sidebar() {
         </div>
       </div>
 
+      {/* Navigator */}
       <div className=" items-center justify-center hidden  md:flex">
         {PAGE_PATHS.map((page, index) => (
           <Link key={page.path} href={page.path}>

@@ -2,14 +2,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import HamburgerIcon from "../ui/hamburger-icon";
-
-const PAGE_PATHS = [
-  { name: "Home", path: "/" },
-  { name: "Publications", path: "/researches" },
-  { name: "Projects", path: "/projects" },
-  { name: "Team", path: "/team" },
-  { name: "Contact", path: "/contact" },
-];
+import { PAGE_PATHS } from "../header";
 
 export default function Sidebar({
   setIsMenuOpen,
@@ -18,7 +11,7 @@ export default function Sidebar({
 
   return (
     <div className=" fixed xl:sticky top-0 right-0 z-[9999] xl:shadow-md">
-      {/* Intersection with the header */}
+      {/* Table - Mobile menu */}
       <div className=" w-[80px] px-4 h-[60px] flex items-center justify-center md:bg-black md:bg-opacity-15">
         <button onClick={() => setIsMenuOpen(true)} className="md:hidden">
           <HamburgerIcon />
