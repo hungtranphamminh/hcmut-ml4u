@@ -2,7 +2,7 @@ name: Deploy Next.Js to GitHub Pages with Diagnostics
 
 on:
   push:
-    branches: [build/github-page-test]
+    branches: [build/github-page]
   workflow_dispatch:
 
 permissions:
