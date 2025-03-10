@@ -1,7 +1,8 @@
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { Project } from "@/lib/get-projects";
+import { getTrailingSlash } from "@/lib/get-trailing-slash";
 import Markdown from "react-markdown";
 import ArrowIcon from "../ui/svgs/arrow-icon";
 
@@ -18,6 +19,7 @@ export default function ProjectDetailOverlay({
   onClose,
   onIndexChange,
 }: ProjectDetailOverlayProps) {
+  const trailingSlash = getTrailingSlash();
   const [isVisible, setIsVisible] = useState(false);
   const currentProject = selectedIndex !== -1 ? projects[selectedIndex] : null;
 
@@ -44,7 +46,7 @@ export default function ProjectDetailOverlay({
       {isVisible && (
         <div className="fixed inset-0 z-50 flex xl:pr-[80px] xl:pl-[80px] pt-[60px]">
           <div className="w-full h-full flex relative">
-            {/* Navigation Sidebar */}
+            {/* Navigator sidebar */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -132,7 +134,7 @@ export default function ProjectDetailOverlay({
                 {currentProject.image && (
                   <div className="relative w-full mb-6">
                     <Image
-                      src={currentProject.image}
+                      src={trailingSlash + currentProject.image}
                       alt={currentProject.title}
                       width={0}
                       height={0}

@@ -33,7 +33,7 @@ export default function BigMenu({
                 </p>
               </div>
             </div>
-            {/* close */}
+            {/* Close */}
             <div className="bg-white rounded-t-lg -mb-5 relative shrink-0">
               <div className="top-[16px] -left-[-2px] -translate-x-full size-[19px] z-[20] absolute rounded-full">
                 <div className="cornered-left w-full h-full relative overflow-hidden"></div>
@@ -47,6 +47,7 @@ export default function BigMenu({
               </button>
             </div>
           </div>
+          {/* Navigator */}
           <div className="   p-4 bg-white rounded-b-lg rounded-tl-lg">
             <div className=" uppercase text-xl font-semibold mb-6 border-b pb-4">
               Navigation

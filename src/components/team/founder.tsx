@@ -1,9 +1,12 @@
+import Link from "next/link";
 import { TeamMember } from "@/types/team/team-types";
+import { constructSocialLink } from "@/lib/construct-social-links";
+import { getTrailingSlash } from "@/lib/get-trailing-slash";
 
 export default function Founder({ pi }: { readonly pi: TeamMember[] }) {
   const currentFounder = pi[0];
 
-  const trailingSlash = process.env.NODE_ENV !== "production" ? "/" : "";
+  const trailingSlash = getTrailingSlash();
 
   return (
     <section className="w-full flex flex-col items-center justify-center">
@@ -16,67 +19,46 @@ export default function Founder({ pi }: { readonly pi: TeamMember[] }) {
       </div>
 
       <div
-        className=" flex flex-col sm:flex-row items-center xl:gap-10 gap-4 justify-center 2xl:max-w-5xl 
+        className=" flex flex-col sm:flex-row md:items-start items-center xl:gap-4 gap-4 justify-center 2xl:max-w-5xl 
         xl:max-w-4xl max-w-3xl
       2xl:px-20 px-4  py-10
       "
       >
         {/* Avatar */}
-        <div className="shrink-0 flex flex-col items-center rounded-lg">
-          <div className="relative w-full  flex items-center justify-center">
+        <div className="shrink-0 flex flex-col items-center rounded-lg lg:max-w-[400px] max-w-[300px]">
+          <div className="relative w-full  flex items-center justify-center rounded-lg">
             <img
               src={trailingSlash + currentFounder.image}
               alt={currentFounder.name}
-              className="w-full h-full max-h-[300px] rounded-lg border shadow-sm"
+              className="w-full h-full max-h-[400px] object-contain rounded-lg shadow-sm"
             />
           </div>
+          {/* Name */}
+          <h3 className="md:text-3xl lg:text-4xl font-medium text-white text-left transition-colors pb-2">
+            {currentFounder.name}
+          </h3>
+          {/* Title */}
+          <p className="md:text-lg text-base  text-white/80 ">
+            <span className=" mr-2 uppercase">Faculty/</span>Principal
+            Investigator
+          </p>
+          {/* Affiliations */}
+          {currentFounder.affiliation && (
+            <p className="text-base text-white/80 mt-1 text-center">
+              {currentFounder.affiliation}
+            </p>
+          )}
         </div>
 
         {/* Founder details */}
-        <div className=" ml-4 backdrop-blur-md shadow-sm p-4">
-          <div className="pb-6 mb-6 w-fit border-b border-gray-400">
-            {/* Name */}
-            <h3 className="text-3xl md:text-4xl font-medium text-white text-left transition-colors pb-2">
-              {currentFounder.name}
-            </h3>
-
-            {/* Title */}
-            <p className="md:text-lg text-base  text-white/80 ">
-              <span className=" mr-2 uppercase">Faculty/</span>Principal
-              Investigator
-            </p>
-            {/* Affiliations */}
-            {currentFounder.affiliation && (
-              <p className="text-base text-white/80 text-left mt-1">
-                {currentFounder.affiliation}
-              </p>
-            )}
-          </div>
-
-          {/* orcid links */}
-          {/* {currentFounder.links && (
-            <div className="flex gap-2 mt-2">
-              {Object.entries(currentFounder.links).map(([platform, url]) => (
-                <a
-                  key={platform}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:text-blue-600 transition-colors"
-                >
-                  {platform}
-                </a>
-              ))}
-            </div>
-          )} */}
-
+        <div className=" ml-4 backdrop-blur-lg rounded-lg bg-black/10 shadow-sm p-4">
           {currentFounder.body && (
-            <div className="font-extralight text-sm text-white/90">
+            <div className="font-extralight text-lg text-white/90">
               <span className="text-white underline mr-1 font-semibold ">
                 Dr. Nguyen Duc Dung
               </span>
               leads a Machine Learning group at
-              <span className="text-white font-semibold underline font-normal mx-1">
+              <span className="text-white font-semibold underline mx-1">
                 Ho Chi Minh City University of Technology (HCMUT)
               </span>
               , focusing on cutting-edge research in artificial intelligence and
@@ -90,6 +72,40 @@ export default function Founder({ pi }: { readonly pi: TeamMember[] }) {
               research and engages in projects to advance the field.
             </div>
           )}
+
+          <div className=" mt-6 w-full border-t border-gray-400">
+            <div className="flex flex-wrap w-full justify-start items-center gap-2 my-2 py-2">
+              {/* Founder links */}
+              {currentFounder.links &&
+                Object.entries(currentFounder.links)
+                  .filter(
+                    ([platform]) =>
+                      platform !== "email" && platform !== "home-page"
+                  )
+                  .map(([platform, url]) => (
+                    <Link
+                      key={platform}
+                      href={constructSocialLink(platform, url)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-600 transition-colors flex items-center justify-start"
+                    >
+                      <img
+                        src={
+                          trailingSlash +
+                          "images/shared/" +
+                          platform +
+                          "-icon.svg"
+                        }
+                        alt={platform}
+                        width={30}
+                        height={30}
+                        className="mr-2 rounded-full"
+                      />
+                    </Link>
+                  ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

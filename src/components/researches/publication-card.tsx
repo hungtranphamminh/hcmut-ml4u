@@ -1,31 +1,13 @@
-import { Paper } from "@/types/research/research-types";
+import Image from "next/image";
 import Link from "next/link";
+import { Paper } from "@/types/research/research-types";
 import authorIcon from "@images/shared/author-black.svg";
 import dateIcon from "@images/shared/date-black.svg";
-import Image from "next/image";
+import HighlightedSearchedText from "../ui/highlighted-searched-text";
 
 interface PublicationCardProps {
   readonly publication: Paper;
   readonly searchTerms?: string[];
-}
-
-function highlightText(text: string, searchTerms: string[] = []) {
-  if (!searchTerms.length) return text;
-
-  const escapedTerms = searchTerms.map((term) =>
-    term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
-  );
-  const regex = new RegExp(`(${escapedTerms.join("|")})`, "gi");
-
-  return text.split(regex).map((part, idx) =>
-    regex.test(part) ? (
-      <mark key={idx} className="bg-yellow-200">
-        {part}
-      </mark>
-    ) : (
-      part
-    )
-  );
 }
 
 export default function PublicationCard({
@@ -49,13 +31,13 @@ export default function PublicationCard({
         <div className="flex flex-col flex-1 min-w-0 py-2">
           {/* Publisher */}
           <p className="text-xs inline-flex ">
-            {highlightText(publication.publisher ?? "", searchTerms)}
+            {HighlightedSearchedText(publication.publisher ?? "", searchTerms)}
           </p>
 
           {/* Title */}
           <h3 className="text-base leading-[120%] font-bold mt-1 mb-2 py-1 border-b border-t border-black/60">
             <Link href={publication.link} target="_blank">
-              {highlightText(publication.title, searchTerms)}
+              {HighlightedSearchedText(publication.title, searchTerms)}
             </Link>
           </h3>
 
@@ -75,7 +57,10 @@ export default function PublicationCard({
               className="inline-block"
             />
             <p className=" text-sm mb-4">
-              {highlightText(publication.authors.join(", "), searchTerms)}
+              {HighlightedSearchedText(
+                publication.authors.join(", "),
+                searchTerms
+              )}
             </p>
           </div>
 

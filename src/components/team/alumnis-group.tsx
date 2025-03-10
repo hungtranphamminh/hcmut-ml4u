@@ -14,7 +14,7 @@ export default function AlumnisGroup({
         2xl:gap-10 md:gap-8 gap-6"
         >
           <div className="max-w-[300px] ml-4">
-            <h2 className="text-xl md:text-4xl font-bold text-left flex flex-col items-start">
+            <h2 className="text-xl md:text-4xl font-bold text-left flex flex-col md:items-start items-center">
               <div className="bg-white w-fit">
                 <span className="leading-none p-[2px] uppercase bg-[url('/images/background.jpg')] bg-[left_42%_top_52%] bg-clip-text text-transparent">
                   Alumni
@@ -24,8 +24,8 @@ export default function AlumnisGroup({
                 Team Members
               </span>
             </h2>
-            <p className="text-white/90 font-light text-left text-sm md:text-base">
-              The following are the alumni of HCMUT who have contributed to the
+            <p className="text-white/90 font-light md:text-left text-center text-sm md:text-base">
+              The following are the alumnis of HCMUT who have contributed to the
               research team.
             </p>
           </div>

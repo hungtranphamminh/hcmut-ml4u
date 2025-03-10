@@ -4,6 +4,15 @@ import path from 'path';
 import { promises as fs } from 'fs';
 import { Paper, YearGroup } from '@/types/research/research-types';
 
+
+/**
+ * Generic YAML content parser class with schema validation.
+ * 
+ * This class handles parsing YAML files with Zod schema validation to ensure
+ * type safety and data integrity. It's used for various data sources in the application.
+ * 
+ * @template T - The expected type of the parsed data
+ */
 export class YamlContentParser<T> {
   private readonly schema: z.ZodType<T>;
   private readonly filePath: string;
@@ -13,6 +22,13 @@ export class YamlContentParser<T> {
     this.filePath = filePath;
   }
 
+
+  /**
+   * Parses the YAML file and validates its contents against the schema
+   * 
+   * @returns The parsed and validated data
+   * @throws Error if the file cannot be read or the data fails validation
+   */
   async parse(): Promise<T> {
     const content = await fs.readFile(this.filePath, 'utf8');
     const data = YAML.parse(content);

@@ -1,10 +1,10 @@
 "use client";
 import React, { useMemo, useRef } from "react";
 import { YearGroup } from "@/types/research/research-types";
-import PublicationCard from "./publication-card";
 import { matchesQuery, splitQuery } from "@/lib/research-search";
 import { useDebounce } from "@/hooks/use-debounce";
 import { useRouter, useSearchParams } from "next/navigation";
+import PublicationCard from "./publication-card";
 
 interface Props {
   readonly publications: YearGroup[];

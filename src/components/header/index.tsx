@@ -15,8 +15,6 @@ export const PAGE_PATHS = [
 export default function Sidebar() {
   const pathName = usePathname();
 
-  console.log("pathName", pathName);
-
   return (
     <div
       className="w-full flex items-center justify-between fixed top-0 left-0 z-[999]

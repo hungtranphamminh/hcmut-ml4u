@@ -23,6 +23,17 @@ export interface Project extends BaseProject {
   content: string;
 }
 
+
+/**
+ * Processes a project's content to extract description and main content.
+ * 
+ * This function separates the excerpt (description) from the main content
+ * by looking for special HTML comment markers. It creates a clean project
+ * object with properly separated metadata and content sections.
+ * 
+ * @param project - The base project data from the markdown file
+ * @returns A processed project object with separated description and content
+ */
 const processProjectContent = (project: BaseProject): Project => {
   const body = project.body || '';
   let description = '';
@@ -44,6 +55,11 @@ const processProjectContent = (project: BaseProject): Project => {
   };
 };
 
+/**
+ * Fetches and processes all project data from markdown files.
+ * 
+ * @returns Promise resolving to an array of fully processed Project objects
+ */
 export const getProjects = async (): Promise<Project[]> => {
   const parser = new ContentParser(
     BaseProjectSchema,
@@ -54,6 +70,11 @@ export const getProjects = async (): Promise<Project[]> => {
   return baseProjects.map(processProjectContent);
 };
 
+/**
+ * Groups projects by their designated category (featured or normal).
+ * 
+ * @returns Object containing arrays of featured and normal projects
+ */
 export const getProjectsByGroup = async () => {
   const projects = await getProjects();
 
@@ -63,6 +84,12 @@ export const getProjectsByGroup = async () => {
   return { featured, normal };
 };
 
+/**
+ * Retrieves a specific project by its unique identifier.
+ * 
+ * @param id - The unique identifier of the project to find
+ * @returns Promise resolving to the found Project or null if not found
+ */
 export const getProjectById = async (id: string): Promise<Project | null> => {
   const projects = await getProjects();
   return projects.find(project => project.id === id) || null;

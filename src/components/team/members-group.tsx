@@ -14,7 +14,7 @@ export default function MembersGroup({
         md:gap-8 xl:gap-10 gap-6"
         >
           <div className="max-w-[300px] p-4">
-            <h2 className="text-xl md:text-4xl font-bold text-right flex flex-col items-end">
+            <h2 className="text-xl md:text-4xl font-bold text-right flex flex-col md:items-end items-center">
               <div className="bg-white w-fit">
                 <span className=" uppercase bg-[url('/images/background.jpg')] bg-[center_bottom] bg-clip-text text-transparent leading-none p-[2px]">
                   Undergrad
@@ -24,7 +24,7 @@ export default function MembersGroup({
                 Team Members
               </div>
             </h2>
-            <p className="text-white/90 font-light text-right text-sm md:text-base">
+            <p className="text-white/90 font-light md:text-right text-center text-sm md:text-base">
               The following are the undergraduate students of HCMUT who are part
               of the research team.
             </p>

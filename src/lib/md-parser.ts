@@ -3,6 +3,15 @@ import matter from 'gray-matter';
 import path from 'path';
 import { promises as fs } from 'fs';
 
+/**
+ * Generic content parser for markdown files with frontmatter.
+ * 
+ * This class reads and parses markdown files from a specified directory,
+ * extracts frontmatter metadata using gray-matter, and validates the data
+ * against a provided Zod schema to ensure type safety.
+ * 
+ * @template T - The expected type of the parsed content
+ */
 export class ContentParser<T> {
   private readonly schema: z.ZodType<T>;
   private readonly contentDir: string;
@@ -15,6 +24,11 @@ export class ContentParser<T> {
     this.contentDir = contentDir;
   }
 
+  /**
+   * Parses all markdown files in the specified directory
+   * 
+   * @returns Array of parsed and validated content objects
+   */
   async parse(): Promise<T[]> {
     const files = await fs.readdir(this.contentDir);
     const mdFiles = files.filter(file => file.endsWith('.md'));

@@ -1,8 +1,8 @@
 "use client";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
-import HamburgerIcon from "../ui/hamburger-icon";
+import { usePathname } from "next/navigation";
 import { PAGE_PATHS } from "../header";
+import HamburgerIcon from "../ui/hamburger-icon";
 
 export default function Sidebar({
   setIsMenuOpen,
@@ -13,7 +13,11 @@ export default function Sidebar({
     <div className=" fixed xl:sticky top-0 right-0 z-[9999] xl:shadow-md">
       {/* Table - Mobile menu */}
       <div className=" w-[80px] px-4 h-[60px] flex items-center justify-center md:bg-black md:bg-opacity-15">
-        <button onClick={() => setIsMenuOpen(true)} className="md:hidden">
+        <button
+          aria-label="Open menu"
+          onClick={() => setIsMenuOpen(true)}
+          className="md:hidden"
+        >
           <HamburgerIcon />
         </button>
       </div>
@@ -40,9 +44,6 @@ export default function Sidebar({
                     }`}
                 >
                   {"0" + (index + 1)}
-
-                  {/* Connector line - only show if current section and not last item */}
-
                   <div
                     className={`
                       transition-all duration-300 ease-in-out 

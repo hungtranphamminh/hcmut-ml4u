@@ -1,17 +1,16 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { getTrailingSlash } from "@/lib/get-trailing-slash";
 import MailIconDark from "../ui/svgs/mail-icon-dark";
 import locationIcon from "@images/shared/location.svg";
 import ArrowIcon from "../ui/svgs/arrow-icon-dark";
-import Image from "next/image";
 
 const ContactPage = () => {
-  const trailingSlash = process.env.NODE_ENV !== "production" ? "/" : "";
+  const trailingSlash = getTrailingSlash();
 
   return (
     <div className="w-full min-h-screen relative text-white">
-      {/* Bg decorator for header */}
-
       {/* Main content */}
       <div className="flex flex-col items-center justify-end min-h-screen overflow-y-auto relative z-10  w-full pt-20 md:px-10 px-4 ">
         <div className="absolute w-full h-1/4 bg-white bottom-0 left-0"></div>
@@ -121,8 +120,7 @@ const ContactPage = () => {
                       </div>
                     </div>
 
-                    {/* Decorated thingy */}
-
+                    {/* Decorate curve */}
                     <div className="z-10 top-0 -translate-y-full left-0 size-[22px]  absolute  rounded-full ">
                       <div className="cornered w-full h-full relative overflow-hidden"></div>
                     </div>

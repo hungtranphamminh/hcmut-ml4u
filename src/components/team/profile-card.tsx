@@ -1,31 +1,23 @@
-import { TeamMember } from "@/types/team/team-types";
 import Image from "next/image";
 import Link from "next/link";
+import { TeamMember } from "@/types/team/team-types";
+import { constructSocialLink } from "@/lib/construct-social-links";
+import { getTrailingSlash } from "@/lib/get-trailing-slash";
 import journalIcon from "@images/members/journal.svg";
 import homepageIcon from "@images/members/homepage.svg";
 
 const MemberCard = ({ member }: { member: TeamMember }) => {
-  const trailingSlash = process.env.NODE_ENV !== "production" ? "/" : "";
+  const trailingSlash = getTrailingSlash();
 
-  const constructSocialLink = (platform: string, url: string) => {
-    switch (platform) {
-      case "linkedin":
-        return "https://www.linkedin.com/in/" + url;
-      case "github":
-        return "https://www.github.com/" + url;
-      case "facebook":
-        return "https://www.facebook.com/" + url;
-      case "google-scholar":
-        return "https://scholar.google.com/citations?user=" + url;
-      case "home-page":
-        return url;
-      case "orcid":
-        return "https://orcid.org/" + url;
-      default:
-        return url;
-    }
-  };
-
+  /**
+   * Constructs a search query from member aliases for finding their publications.
+   *
+   * This helper function builds a search query string from a list of member name aliases,
+   * formatting them as quoted phrases for exact matching in the research search.
+   *
+   * @param aliases - Array of name variations/aliases for the team member
+   * @returns Formatted search query string with quoted aliases
+   */
   const constructResearchSearchQuery = (aliases?: string[]) => {
     if (!aliases || aliases.length === 0) return "";
     return aliases.map((alias) => `"${alias}"`).join(" ");

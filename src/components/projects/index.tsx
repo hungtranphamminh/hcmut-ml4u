@@ -13,12 +13,12 @@ export default function ProjectsPage({
 }: {
   readonly projects: Project[];
 }) {
-  const [selectedIndex, setSelectedIndex] = useState<number>(-1);
-  const searchParams = useSearchParams();
   const router = useRouter();
-  const currentSearch = searchParams.get("search") || "";
+  const searchParams = useSearchParams();
   const inputRef = useRef<HTMLInputElement>(null);
+  const currentSearch = searchParams.get("search") ?? "";
   const currentInputValue = useRef(currentSearch);
+  const [selectedIndex, setSelectedIndex] = useState<number>(-1);
   const debouncedUrlUpdate = useDebounce(currentInputValue.current, 300);
 
   const filteredPublications = useMemo(() => {
