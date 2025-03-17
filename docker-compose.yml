@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  ml4u-app:
+    build:
+      context: .
+      target: development
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app:cached
+      - /app/node_modules
+      - /app/.next
+    command: yarn dev
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+      - NEXT_TELEMETRY_DISABLED=1
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
