@@ -62,7 +62,7 @@ const ContactPage = () => {
               >
                 <div className="relative flex items-center gap-2 w-full">
                   <div
-                    className="w-0 h-full absolute top-0 right-0 bg-[url('/images/hcm-pic/no1.avif')] bg-bottom 
+                    className="w-0 h-full absolute top-0 right-0 
                     group-hover:w-full transition-all duration-500  ease-in-out group-hover:left-0
                   "
                   ></div>
@@ -71,9 +71,7 @@ const ContactPage = () => {
 
                     <MailIconDark />
 
-                    <p className="text-black group-hover:text-white font-normal">
-                      Email Us
-                    </p>
+                    <p className="text-black font-normal">Email Us</p>
                     <div className="w-0 group-hover:w-6 transition-all duration-500 ease-in-out overflow-hidden">
                       <ArrowIcon />
                     </div>
@@ -115,7 +113,7 @@ const ContactPage = () => {
                         height={20}
                       />
 
-                      <div className="text-balance leading-none text-base font-semibold text-transparent bg-clip-text bg-[url('/images/hcm-pic/no1.avif')] bg-bottom py-3">
+                      <div className="text-balance leading-none text-base font-semibold text-black bg-bottom py-3">
                         Faculty of Computer Science and Engineering
                       </div>
                     </div>

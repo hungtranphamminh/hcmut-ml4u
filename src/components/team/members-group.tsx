@@ -15,8 +15,8 @@ export default function MembersGroup({
         >
           <div className="max-w-[300px] p-4">
             <h2 className="text-xl md:text-4xl font-bold text-right flex flex-col md:items-end items-center">
-              <div className="bg-white w-fit">
-                <span className=" uppercase bg-[url('/images/background.jpg')] bg-[center_bottom] bg-clip-text text-transparent leading-none p-[2px]">
+              <div className="w-fit">
+                <span className=" uppercase text-white leading-none p-[2px]">
                   Undergrad
                 </span>
               </div>

@@ -16,7 +16,7 @@ export default function MailIcon() {
         <rect
           fill="none"
           height="22"
-          className="stroke-[#000] group-hover:stroke-[#fff] transition-all duration-300 ease-in-out"
+          className="stroke-[#000]  transition-all duration-300 ease-in-out"
           strokeLinejoin="round"
           strokeMiterlimit="10"
           strokeWidth="2"
@@ -28,7 +28,7 @@ export default function MailIcon() {
         <polyline
           fill="none"
           points="1,5 16,20 31,5     "
-          className="stroke-[#000] group-hover:stroke-[#fff] transition-all duration-300 ease-in-out"
+          className="stroke-[#000]  transition-all duration-300 ease-in-out"
           strokeLinejoin="round"
           strokeMiterlimit="10"
           strokeWidth="2"
@@ -36,7 +36,7 @@ export default function MailIcon() {
 
         <line
           fill="none"
-          className="stroke-[#000] group-hover:stroke-[#fff] transition-all duration-300 ease-in-out"
+          className="stroke-[#000]  transition-all duration-300 ease-in-out"
           strokeLinejoin="round"
           strokeMiterlimit="10"
           strokeWidth="2"
@@ -48,7 +48,7 @@ export default function MailIcon() {
 
         <line
           fill="none"
-          className="stroke-[#000] group-hover:stroke-[#fff] transition-all duration-300 ease-in-out"
+          className="stroke-[#000]  transition-all duration-300 ease-in-out"
           strokeLinejoin="round"
           strokeMiterlimit="10"
           strokeWidth="2"

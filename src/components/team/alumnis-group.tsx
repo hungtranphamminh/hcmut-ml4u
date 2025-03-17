@@ -15,8 +15,8 @@ export default function AlumnisGroup({
         >
           <div className="max-w-[300px] ml-4">
             <h2 className="text-xl md:text-4xl font-bold text-left flex flex-col md:items-start items-center">
-              <div className="bg-white w-fit">
-                <span className="leading-none p-[2px] uppercase bg-[url('/images/background.jpg')] bg-[left_42%_top_52%] bg-clip-text text-transparent">
+              <div className="w-fit">
+                <span className="leading-none p-[2px] uppercase text-white">
                   Alumni
                 </span>
               </div>
