@@ -1,24 +1,21 @@
 # AITech Lab Website
 
-This repository contains the source code for the AITech Lab website - a Next.js-based website for the research team at Ho Chi Minh City University of Technology (HCMUT).
+This repository contains the source code for the AITech Lab website - a Next.js 15 TypeScript website with App Router for the research team at Ho Chi Minh City University of Technology (HCMUT).
+
+> **Note**: This is a highly personalized project tailored specifically for our research team's needs and is not intended as a general-purpose template that can be easily modified for other uses.
 
 ## Getting Started
 
 ### Installation
 
-1. Install Node.js dependencies:
+1. Install Docker and Docker Compose on your system
 
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
-```
+   - [Docker Desktop](https://www.docker.com/products/docker-desktop/) is recommended for Windows and Mac users
+   - For Linux users, follow the [Docker Engine installation](https://docs.docker.com/engine/install/) and [Docker Compose installation](https://docs.docker.com/compose/install/)
 
-3. Set up Python environment for citation management:
+2. Clone this repository to your local machine
+
+3. (Optional) Set up Python environment for citation management:
 
 ```bash
 # Create and activate virtual environment
@@ -33,19 +30,49 @@ pip install -r scripts/citations/requirements.txt
 
 ### Development Server
 
-Run the development server:
+We use Docker to ensure a standardized development environment across different devices. This helps avoid "it works on my machine" issues and ensures everyone on the team has the same setup.
+
+Run the development server using Docker Compose:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Start the development server with watch mode
+docker compose watch
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will:
+
+- Build the Docker container with all required dependencies
+- Start the Next.js development server at http://localhost:3000
+- Watch for file changes in:
+  - src/
+  - public/
+  - content/
+  - \_data/
+  - scripts/
+  - config files
+
+Any changes to these directories will automatically be synced to the container, and Next.js hot reloading will update your browser view.
+
+> **Note**: For changes to dependencies (package.json, yarn.lock), Docker will automatically rebuild the container.
+
+### Alternative Development Methods
+
+If you prefer not to use Docker, you can still run the development server directly:
+
+```bash
+# Install dependencies
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+
+# Start development server
+npm run dev
+# or equivalent with your package manager
+```
 
 ## Content Management
 
@@ -185,6 +212,14 @@ and other relevant information.
 
 Place member profile photos in `public/images/members/` folder with a descriptive name that matches the image reference in the frontmatter.
 
+## Technical Details
+
+- Built with Next.js 15 with TypeScript and App Router
+- This project is a landing page for our research team
+- The site consumes Jekyll-style markdown files with Liquid templating as content
+- These files are parsed into content for the Next.js 15 app
+- The main design theme is minimalist
+
 ## Image Management Rules
 
 - Member profile images must be stored in: `public/images/members/`
@@ -196,12 +231,26 @@ Place member profile photos in `public/images/members/` folder with a descriptiv
 
 ## Deploying to GitHub Pages
 
-This website is configured to deploy to GitHub Pages via GitHub Actions. The workflow is defined in `.github/workflows/deploy.yml`.
+This website has been configured for static site generation and deployment to GitHub Pages. The Next.js configuration has been specifically modified to support static export for GitHub Pages hosting. The deployment workflow is defined in `.github/workflows/deploy.yml`.
+
+### Next.js Static Export Configuration
+
+The Next.js configuration has been customized to:
+
+- Generate static HTML/CSS/JS files without server-side rendering requirements
+- Configure proper base paths and asset prefixes for GitHub Pages hosting
+- Handle routing for static deployment
+- Ensure all internal links work correctly in the GitHub Pages environment
+
+### Deployment Process
 
 To deploy:
 
 1. Push your changes to the `build/github-page` branch
-2. The GitHub Actions workflow will automatically build and deploy the site
+2. The GitHub Actions workflow will automatically:
+   - Build the Next.js application
+   - Generate static files using `next export`
+   - Deploy the static files to GitHub Pages
 3. Your site will be available at `https://<username>.github.io/<repository-name>`
 
 ## Additional Information

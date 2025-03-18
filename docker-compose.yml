@@ -1,26 +1,3 @@
-# version: "3.8"
-
-# services:
-#   ml4u-app:
-#     build:
-#       context: .
-#       target: development
-#     ports:
-#       - "3000:3000"
-#     volumes:
-#       - ./:/app
-#       - /app/node_modules
-#       - /app/.next
-#     command: yarn dev
-#     environment:
-#       - NODE_ENV=development
-#       - CHOKIDAR_USEPOLLING=true
-#       - WATCHPACK_POLLING=true
-#       - FAST_REFRESH=true
-#       - NEXT_TELEMETRY_DISABLED=1
-#     restart: unless-stopped
-#     stdin_open: true
-#     tty: true
 version: "3.8"
 
 services:
